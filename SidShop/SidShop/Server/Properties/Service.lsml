@@ -1,0 +1,1178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModelFragment xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication
+    Name="LightSwitchServiceApplication"
+    Version="1.0.0.0">
+    <ServiceApplication.Attributes>
+      <ModuleNamespace
+        Namespace="LightSwitchApplication" />
+    </ServiceApplication.Attributes>
+  </ServiceApplication>
+  <DataService
+    DataProvider="EntityFrameworkDataProvider"
+    EntityContainer="LightSwitchCommonModule:inikierpData"
+    Name="inikierpDataDataService">
+    <DataService.ConnectionProperties>
+      <ConnectionProperty
+        Name="DataProviderName"
+        Value="91510608-8809-4020-8897-fba057e22d54" />
+      <ConnectionProperty
+        Name="DataSourceName"
+        Value="067ea0d9-ba62-43f7-9106-34930c60c528" />
+      <ConnectionProperty
+        Name="ProviderInvariantName"
+        Value="System.Data.SqlClient" />
+      <ConnectionProperty
+        Name="SafeConnectionString"
+        Value="Data Source=.;Initial Catalog=inikierp;Integrated Security=True" />
+      <ConnectionProperty
+        Name="ConnectionStringGuid"
+        Value="2864e4bf-63bf-45e9-ae08-7ad9bc7f73cd" />
+      <ConnectionProperty
+        Name="ProviderManifestToken"
+        Value="2008" />
+    </DataService.ConnectionProperties>
+    <EntitySetMapping
+      EntitySet="cuskindcode">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="cuskindcode" />
+        <SsdlProperty
+          Name="cuskindID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:cuskindcodeItem/Properties[cuskindID]"
+          StoreGeneratedPattern="Identity"
+          Type="bigint" />
+        <SsdlProperty
+          MaxLength="1"
+          Name="cusAcc"
+          Nullable="False"
+          Property="LightSwitchCommonModule:cuskindcodeItem/Properties[cusAcc]"
+          Type="nchar" />
+        <SsdlProperty
+          MaxLength="20"
+          Name="cusDesc"
+          Nullable="False"
+          Property="LightSwitchCommonModule:cuskindcodeItem/Properties[cusDesc]"
+          Type="nvarchar" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="customercode">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="customercode" />
+        <SsdlProperty
+          Name="cusID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:customercodeItem/Properties[cusID]"
+          StoreGeneratedPattern="Identity"
+          Type="bigint" />
+        <SsdlProperty
+          MaxLength="9"
+          Name="cusAcc"
+          Nullable="True"
+          Property="LightSwitchCommonModule:customercodeItem/Properties[cusAcc]"
+          Type="nchar" />
+        <SsdlProperty
+          Name="cusKind"
+          Nullable="True"
+          Property="LightSwitchCommonModule:customercodeItem/Properties[cusKind]"
+          Type="smallint" />
+        <SsdlProperty
+          MaxLength="20"
+          Name="tel"
+          Nullable="True"
+          Property="LightSwitchCommonModule:customercodeItem/Properties[tel]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="30"
+          Name="simpleComany"
+          Nullable="True"
+          Property="LightSwitchCommonModule:customercodeItem/Properties[simpleComany]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="20"
+          Name="cusName"
+          Nullable="True"
+          Property="LightSwitchCommonModule:customercodeItem/Properties[cusName]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="10"
+          Name="cusPws"
+          Nullable="True"
+          Property="LightSwitchCommonModule:customercodeItem/Properties[cusPws]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="companyName"
+          Nullable="True"
+          Property="LightSwitchCommonModule:customercodeItem/Properties[companyName]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="20"
+          Name="contactName"
+          Nullable="True"
+          Property="LightSwitchCommonModule:customercodeItem/Properties[contactName]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="8"
+          Name="tax"
+          Nullable="True"
+          Property="LightSwitchCommonModule:customercodeItem/Properties[tax]"
+          Type="nchar" />
+        <SsdlProperty
+          MaxLength="5"
+          Name="zip"
+          Nullable="True"
+          Property="LightSwitchCommonModule:customercodeItem/Properties[zip]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="70"
+          Name="companyAddress"
+          Nullable="True"
+          Property="LightSwitchCommonModule:customercodeItem/Properties[companyAddress]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="100"
+          Name="sendAddress"
+          Nullable="True"
+          Property="LightSwitchCommonModule:customercodeItem/Properties[sendAddress]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="taxAddress"
+          Nullable="True"
+          Property="LightSwitchCommonModule:customercodeItem/Properties[taxAddress]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="40"
+          Name="cusEmail"
+          Nullable="True"
+          Property="LightSwitchCommonModule:customercodeItem/Properties[cusEmail]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="payID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:customercodeItem/Properties[payID]"
+          Type="smallint" />
+        <SsdlProperty
+          Name="invTitleCode"
+          Nullable="True"
+          Property="LightSwitchCommonModule:customercodeItem/Properties[invTitleCode]"
+          Type="smallint" />
+        <SsdlProperty
+          MaxLength="25"
+          Name="contactMobile"
+          Nullable="True"
+          Property="LightSwitchCommonModule:customercodeItem/Properties[contactMobile]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="buildDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:customercodeItem/Properties[buildDate]"
+          Type="date" />
+        <SsdlProperty
+          Name="cusMemo"
+          Nullable="True"
+          Property="LightSwitchCommonModule:customercodeItem/Properties[cusMemo]"
+          Type="nvarchar(max)" />
+        <SsdlProperty
+          Name="cClerk"
+          Nullable="True"
+          Property="LightSwitchCommonModule:customercodeItem/Properties[cClerk]"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="25"
+          Name="rutenId"
+          Nullable="True"
+          Property="LightSwitchCommonModule:customercodeItem/Properties[rutenId]"
+          Type="nvarchar" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="employeecode">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="employeecode" />
+        <SsdlProperty
+          Name="empID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:employeecodeItem/Properties[empID]"
+          StoreGeneratedPattern="Identity"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="10"
+          Name="empAcc"
+          Nullable="False"
+          Property="LightSwitchCommonModule:employeecodeItem/Properties[empAcc]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="empsellStoreID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:employeecodeItem/Properties[empsellStoreID]"
+          Type="smallint" />
+        <SsdlProperty
+          MaxLength="1"
+          Name="empCode"
+          Nullable="True"
+          Property="LightSwitchCommonModule:employeecodeItem/Properties[empCode]"
+          Type="nchar" />
+        <SsdlProperty
+          MaxLength="10"
+          Name="empPws"
+          Nullable="False"
+          Property="LightSwitchCommonModule:employeecodeItem/Properties[empPws]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="10"
+          Name="empName"
+          Nullable="False"
+          Property="LightSwitchCommonModule:employeecodeItem/Properties[empName]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="15"
+          Name="empTel"
+          Nullable="True"
+          Property="LightSwitchCommonModule:employeecodeItem/Properties[empTel]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="15"
+          Name="empMobile"
+          Nullable="True"
+          Property="LightSwitchCommonModule:employeecodeItem/Properties[empMobile]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="empAdd"
+          Nullable="True"
+          Property="LightSwitchCommonModule:employeecodeItem/Properties[empAdd]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="empDepar"
+          Nullable="True"
+          Property="LightSwitchCommonModule:employeecodeItem/Properties[empDepar]"
+          Type="smallint" />
+        <SsdlProperty
+          MaxLength="1"
+          Name="isAdmin"
+          Nullable="True"
+          Property="LightSwitchCommonModule:employeecodeItem/Properties[isAdmin]"
+          Type="nchar" />
+        <SsdlProperty
+          MaxLength="45"
+          Name="empEmail"
+          Nullable="True"
+          Property="LightSwitchCommonModule:employeecodeItem/Properties[empEmail]"
+          Type="nvarchar" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="eorder">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="eorder" />
+        <SsdlProperty
+          Name="odID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:eorderItem/Properties[odID]"
+          StoreGeneratedPattern="Identity"
+          Type="bigint" />
+        <SsdlProperty
+          MaxLength="16"
+          Name="orderNo"
+          Nullable="True"
+          Property="LightSwitchCommonModule:eorderItem/Properties[orderNo]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="30"
+          Name="storeNumber"
+          Nullable="True"
+          Property="LightSwitchCommonModule:eorderItem/Properties[storeNumber]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="storeID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:eorderItem/Properties[storeID]"
+          Type="smallint" />
+        <SsdlProperty
+          Name="langID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:eorderItem/Properties[langID]"
+          Type="smallint" />
+        <SsdlProperty
+          Name="payID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:eorderItem/Properties[payID]"
+          Type="smallint" />
+        <SsdlProperty
+          MaxLength="10"
+          Name="invNo"
+          Nullable="True"
+          Property="LightSwitchCommonModule:eorderItem/Properties[invNo]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="total"
+          Nullable="True"
+          Property="LightSwitchCommonModule:eorderItem/Properties[total]"
+          Type="float" />
+        <SsdlProperty
+          Name="tax"
+          Nullable="True"
+          Precision="8"
+          Property="LightSwitchCommonModule:eorderItem/Properties[tax]"
+          Type="numeric" />
+        <SsdlProperty
+          Name="noTax"
+          Nullable="True"
+          Property="LightSwitchCommonModule:eorderItem/Properties[noTax]"
+          Type="float" />
+        <SsdlProperty
+          Name="sendID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:eorderItem/Properties[sendID]"
+          Type="smallint" />
+        <SsdlProperty
+          Name="eoClerk"
+          Nullable="False"
+          Property="LightSwitchCommonModule:eorderItem/Properties[eoClerk]"
+          Type="int" />
+        <SsdlProperty
+          Name="curID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:eorderItem/Properties[curID]"
+          Type="smallint" />
+        <SsdlProperty
+          Name="eoDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:eorderItem/Properties[eoDate]"
+          Type="date" />
+        <SsdlProperty
+          MaxLength="1"
+          Name="isTax"
+          Nullable="True"
+          Property="LightSwitchCommonModule:eorderItem/Properties[isTax]"
+          Type="nchar" />
+        <SsdlProperty
+          Name="invTitleCode"
+          Nullable="True"
+          Property="LightSwitchCommonModule:eorderItem/Properties[invTitleCode]"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="1"
+          Name="isMerger"
+          Nullable="True"
+          Property="LightSwitchCommonModule:eorderItem/Properties[isMerger]"
+          Type="nchar" />
+        <SsdlProperty
+          MaxLength="1"
+          Name="isClose"
+          Nullable="True"
+          Property="LightSwitchCommonModule:eorderItem/Properties[isClose]"
+          Type="nchar" />
+        <SsdlProperty
+          MaxLength="1"
+          Name="isPayment"
+          Nullable="True"
+          Property="LightSwitchCommonModule:eorderItem/Properties[isPayment]"
+          Type="nchar" />
+        <SsdlProperty
+          Name="eStatusID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:eorderItem/Properties[eStatusID]"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="30"
+          Name="payment_no"
+          Nullable="True"
+          Property="LightSwitchCommonModule:eorderItem/Properties[payment_no]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="eoMemo"
+          Nullable="True"
+          Property="LightSwitchCommonModule:eorderItem/Properties[eoMemo]"
+          Type="nvarchar(max)" />
+        <SsdlProperty
+          Name="companyMemo"
+          Nullable="True"
+          Property="LightSwitchCommonModule:eorderItem/Properties[companyMemo]"
+          Type="nvarchar(max)" />
+        <SsdlProperty
+          Name="shipment"
+          Nullable="True"
+          Property="LightSwitchCommonModule:eorderItem/Properties[shipment]"
+          Type="smallint" />
+        <SsdlForeignKeyProperty
+          Name="cusID"
+          Nullable="True"
+          PropertyName="cusID"
+          Type="bigint" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="eorderitem">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="eorderitem" />
+        <SsdlProperty
+          Name="odItemID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:eorderitemItem/Properties[odItemID]"
+          StoreGeneratedPattern="Identity"
+          Type="bigint" />
+        <SsdlProperty
+          Name="invi"
+          Nullable="True"
+          Property="LightSwitchCommonModule:eorderitemItem/Properties[invi]"
+          Type="bigint" />
+        <SsdlProperty
+          MaxLength="3"
+          Name="disCount"
+          Nullable="True"
+          Property="LightSwitchCommonModule:eorderitemItem/Properties[disCount]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="qty"
+          Nullable="True"
+          Property="LightSwitchCommonModule:eorderitemItem/Properties[qty]"
+          Type="float" />
+        <SsdlProperty
+          MaxLength="10"
+          Name="iunitDesc"
+          Nullable="True"
+          Property="LightSwitchCommonModule:eorderitemItem/Properties[iunitDesc]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="unitPrice"
+          Nullable="True"
+          Property="LightSwitchCommonModule:eorderitemItem/Properties[unitPrice]"
+          Type="float" />
+        <SsdlProperty
+          MaxLength="1"
+          Name="isValue"
+          Nullable="True"
+          Property="LightSwitchCommonModule:eorderitemItem/Properties[isValue]"
+          Type="nchar" />
+        <SsdlProperty
+          Name="oldItemPrID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:eorderitemItem/Properties[oldItemPrID]"
+          Type="bigint" />
+        <SsdlProperty
+          Name="deliveryDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:eorderitemItem/Properties[deliveryDate]"
+          Type="date" />
+        <SsdlProperty
+          MaxLength="30"
+          Name="note"
+          Nullable="True"
+          Property="LightSwitchCommonModule:eorderitemItem/Properties[note]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="isPrint"
+          Nullable="True"
+          Property="LightSwitchCommonModule:eorderitemItem/Properties[isPrint]"
+          Type="bit" />
+        <SsdlForeignKeyProperty
+          Name="odID"
+          Nullable="False"
+          PropertyName="odID"
+          Type="bigint" />
+        <SsdlForeignKeyProperty
+          Name="prodID"
+          Nullable="False"
+          PropertyName="prodID"
+          Type="bigint" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="eorderstatuscode">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="eorderstatuscode" />
+        <SsdlProperty
+          Name="eStatusID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:eorderstatuscodeItem/Properties[eStatusID]"
+          StoreGeneratedPattern="Identity"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="40"
+          Name="esDesc"
+          Nullable="False"
+          Property="LightSwitchCommonModule:eorderstatuscodeItem/Properties[esDesc]"
+          Type="nvarchar" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="invtitlecode">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="invtitlecode" />
+        <SsdlProperty
+          Name="invTitleCode"
+          Nullable="False"
+          Property="LightSwitchCommonModule:invtitlecodeItem/Properties[invTitleCode]"
+          StoreGeneratedPattern="Identity"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="8"
+          Name="invCode"
+          Nullable="True"
+          Property="LightSwitchCommonModule:invtitlecodeItem/Properties[invCode]"
+          Type="nchar" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="invTitleDesc"
+          Nullable="False"
+          Property="LightSwitchCommonModule:invtitlecodeItem/Properties[invTitleDesc]"
+          Type="nvarchar" />
+        <SsdlForeignKeyProperty
+          Name="cusID"
+          Nullable="False"
+          PropertyName="cusID"
+          Type="bigint" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="paywaycode">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="paywaycode" />
+        <SsdlProperty
+          Name="payID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:paywaycodeItem/Properties[payID]"
+          StoreGeneratedPattern="Identity"
+          Type="smallint" />
+        <SsdlProperty
+          MaxLength="20"
+          Name="payDesc"
+          Nullable="False"
+          Property="LightSwitchCommonModule:paywaycodeItem/Properties[payDesc]"
+          Type="nvarchar" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="productclass">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="productclass" />
+        <SsdlProperty
+          Name="ppID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:productclassItem/Properties[ppID]"
+          StoreGeneratedPattern="Identity"
+          Type="smallint" />
+        <SsdlProperty
+          MaxLength="5"
+          Name="ppNum"
+          Nullable="False"
+          Property="LightSwitchCommonModule:productclassItem/Properties[ppNum]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="70"
+          Name="ppName"
+          Nullable="False"
+          Property="LightSwitchCommonModule:productclassItem/Properties[ppName]"
+          Type="nvarchar" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="productcode">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="productcode" />
+        <SsdlProperty
+          Name="prodID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:productcodeItem/Properties[prodID]"
+          StoreGeneratedPattern="Identity"
+          Type="bigint" />
+        <SsdlProperty
+          MaxLength="12"
+          Name="prodAcc"
+          Nullable="False"
+          Property="LightSwitchCommonModule:productcodeItem/Properties[prodAcc]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="60"
+          Name="prodDesc"
+          Nullable="False"
+          Property="LightSwitchCommonModule:productcodeItem/Properties[prodDesc]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="120"
+          Name="prodEnDesc"
+          Nullable="True"
+          Property="LightSwitchCommonModule:productcodeItem/Properties[prodEnDesc]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="32"
+          Name="prodType"
+          Nullable="True"
+          Property="LightSwitchCommonModule:productcodeItem/Properties[prodType]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="16"
+          Name="pWeight"
+          Nullable="True"
+          Property="LightSwitchCommonModule:productcodeItem/Properties[pWeight]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="30"
+          Name="srcPartNo"
+          Nullable="True"
+          Property="LightSwitchCommonModule:productcodeItem/Properties[srcPartNo]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="40"
+          Name="prodSize"
+          Nullable="True"
+          Property="LightSwitchCommonModule:productcodeItem/Properties[prodSize]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="10"
+          Name="prodSCode"
+          Nullable="True"
+          Property="LightSwitchCommonModule:productcodeItem/Properties[prodSCode]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="bUnitID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:productcodeItem/Properties[bUnitID]"
+          Type="smallint" />
+        <SsdlProperty
+          Name="pUnitID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:productcodeItem/Properties[pUnitID]"
+          Type="smallint" />
+        <SsdlProperty
+          MaxLength="14"
+          Name="prodSeq"
+          Nullable="True"
+          Property="LightSwitchCommonModule:productcodeItem/Properties[prodSeq]"
+          Type="nchar" />
+        <SsdlProperty
+          Name="prodSellPrice"
+          Nullable="True"
+          Property="LightSwitchCommonModule:productcodeItem/Properties[prodSellPrice]"
+          Type="float" />
+        <SsdlProperty
+          Name="pHighCost"
+          Nullable="True"
+          Property="LightSwitchCommonModule:productcodeItem/Properties[pHighCost]"
+          Type="float" />
+        <SsdlProperty
+          Name="pLowCost"
+          Nullable="True"
+          Property="LightSwitchCommonModule:productcodeItem/Properties[pLowCost]"
+          Type="float" />
+        <SsdlProperty
+          Name="pAvgCost"
+          Nullable="True"
+          Property="LightSwitchCommonModule:productcodeItem/Properties[pAvgCost]"
+          Type="float" />
+        <SsdlProperty
+          Name="pOrderQty"
+          Nullable="True"
+          Property="LightSwitchCommonModule:productcodeItem/Properties[pOrderQty]"
+          Type="int" />
+        <SsdlProperty
+          Name="pNowQty"
+          Nullable="True"
+          Property="LightSwitchCommonModule:productcodeItem/Properties[pNowQty]"
+          Type="int" />
+        <SsdlProperty
+          Name="pMemo"
+          Nullable="True"
+          Property="LightSwitchCommonModule:productcodeItem/Properties[pMemo]"
+          Type="nvarchar(max)" />
+        <SsdlProperty
+          MaxLength="70"
+          Name="pImg"
+          Nullable="True"
+          Property="LightSwitchCommonModule:productcodeItem/Properties[pImg]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="25"
+          Name="pStorageSpaces"
+          Nullable="True"
+          Property="LightSwitchCommonModule:productcodeItem/Properties[pStorageSpaces]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="pInDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:productcodeItem/Properties[pInDate]"
+          Type="date" />
+        <SsdlProperty
+          Name="pOutDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:productcodeItem/Properties[pOutDate]"
+          Type="date" />
+        <SsdlProperty
+          Name="pBuildDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:productcodeItem/Properties[pBuildDate]"
+          Type="date" />
+        <SsdlProperty
+          Name="pTranDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:productcodeItem/Properties[pTranDate]"
+          Type="date" />
+        <SsdlProperty
+          Name="pClerk"
+          Nullable="True"
+          Property="LightSwitchCommonModule:productcodeItem/Properties[pClerk]"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="ppID"
+          Nullable="True"
+          PropertyName="ppID"
+          Type="smallint" />
+        <SsdlForeignKeyProperty
+          Name="supID"
+          Nullable="True"
+          PropertyName="supID"
+          Type="bigint" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="punitcode">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="punitcode" />
+        <SsdlProperty
+          Name="pUnitID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:punitcodeItem/Properties[pUnitID]"
+          StoreGeneratedPattern="Identity"
+          Type="smallint" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="pUnitEnDesc"
+          Nullable="True"
+          Property="LightSwitchCommonModule:punitcodeItem/Properties[pUnitEnDesc]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="20"
+          Name="pUnitDesc"
+          Nullable="False"
+          Property="LightSwitchCommonModule:punitcodeItem/Properties[pUnitDesc]"
+          Type="nvarchar" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="sendrecord">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="sendrecord" />
+        <SsdlProperty
+          Name="sendRecordID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:sendrecordItem/Properties[sendRecordID]"
+          StoreGeneratedPattern="Identity"
+          Type="int" />
+        <SsdlProperty
+          Name="odID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:sendrecordItem/Properties[odID]"
+          Type="bigint" />
+        <SsdlProperty
+          Name="CorpID"
+          Nullable="True"
+          Property="LightSwitchCommonModule:sendrecordItem/Properties[CorpID]"
+          Type="smallint" />
+        <SsdlProperty
+          Name="sendDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:sendrecordItem/Properties[sendDate]"
+          Type="date" />
+        <SsdlProperty
+          Name="money"
+          Nullable="True"
+          Property="LightSwitchCommonModule:sendrecordItem/Properties[money]"
+          Type="real" />
+        <SsdlProperty
+          MaxLength="30"
+          Name="sendNum"
+          Nullable="True"
+          Property="LightSwitchCommonModule:sendrecordItem/Properties[sendNum]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="weight"
+          Nullable="True"
+          Precision="10"
+          Property="LightSwitchCommonModule:sendrecordItem/Properties[weight]"
+          Type="decimal" />
+        <SsdlProperty
+          MaxLength="30"
+          Name="note"
+          Nullable="True"
+          Property="LightSwitchCommonModule:sendrecordItem/Properties[note]"
+          Type="nvarchar" />
+        <SsdlForeignKeyProperty
+          Name="sendTypeID"
+          Nullable="False"
+          PropertyName="sendTypeID"
+          Type="smallint" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="sendtype">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="sendtype" />
+        <SsdlProperty
+          Name="sendTypeID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:sendtypeItem/Properties[sendTypeID]"
+          Type="smallint" />
+        <SsdlProperty
+          MaxLength="30"
+          Name="sendTypeName"
+          Nullable="False"
+          Property="LightSwitchCommonModule:sendtypeItem/Properties[sendTypeName]"
+          Type="nvarchar" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="suppliercode">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="suppliercode" />
+        <SsdlProperty
+          Name="supID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:suppliercodeItem/Properties[supID]"
+          StoreGeneratedPattern="Identity"
+          Type="bigint" />
+        <SsdlProperty
+          MaxLength="6"
+          Name="supAcc"
+          Nullable="False"
+          Property="LightSwitchCommonModule:suppliercodeItem/Properties[supAcc]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="12"
+          Name="simpleSup"
+          Nullable="True"
+          Property="LightSwitchCommonModule:suppliercodeItem/Properties[simpleSup]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="6"
+          Name="supCode"
+          Nullable="True"
+          Property="LightSwitchCommonModule:suppliercodeItem/Properties[supCode]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="40"
+          Name="supName"
+          Nullable="True"
+          Property="LightSwitchCommonModule:suppliercodeItem/Properties[supName]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="8"
+          Name="supTax"
+          Nullable="False"
+          Property="LightSwitchCommonModule:suppliercodeItem/Properties[supTax]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="30"
+          Name="contactName1"
+          Nullable="True"
+          Property="LightSwitchCommonModule:suppliercodeItem/Properties[contactName1]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="15"
+          Name="contactMobile1"
+          Nullable="True"
+          Property="LightSwitchCommonModule:suppliercodeItem/Properties[contactMobile1]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="10"
+          Name="contactName2"
+          Nullable="True"
+          Property="LightSwitchCommonModule:suppliercodeItem/Properties[contactName2]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="15"
+          Name="contactMobile2"
+          Nullable="True"
+          Property="LightSwitchCommonModule:suppliercodeItem/Properties[contactMobile2]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="10"
+          Name="contactName3"
+          Nullable="True"
+          Property="LightSwitchCommonModule:suppliercodeItem/Properties[contactName3]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="15"
+          Name="contactMobile3"
+          Nullable="True"
+          Property="LightSwitchCommonModule:suppliercodeItem/Properties[contactMobile3]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="20"
+          Name="supTel"
+          Nullable="True"
+          Property="LightSwitchCommonModule:suppliercodeItem/Properties[supTel]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="20"
+          Name="supFax"
+          Nullable="True"
+          Property="LightSwitchCommonModule:suppliercodeItem/Properties[supFax]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="supAdd"
+          Nullable="True"
+          Property="LightSwitchCommonModule:suppliercodeItem/Properties[supAdd]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="supMail"
+          Nullable="True"
+          Property="LightSwitchCommonModule:suppliercodeItem/Properties[supMail]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="200"
+          Name="supMomo"
+          Nullable="True"
+          Property="LightSwitchCommonModule:suppliercodeItem/Properties[supMomo]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="inDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:suppliercodeItem/Properties[inDate]"
+          Type="date" />
+        <SsdlProperty
+          Name="lastInDate"
+          Nullable="True"
+          Property="LightSwitchCommonModule:suppliercodeItem/Properties[lastInDate]"
+          Type="date" />
+        <SsdlProperty
+          Name="sClerk"
+          Nullable="True"
+          Property="LightSwitchCommonModule:suppliercodeItem/Properties[sClerk]"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="supPayID"
+          Nullable="True"
+          PropertyName="supPayID"
+          Type="smallint" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="unitcode">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="unitcode" />
+        <SsdlProperty
+          Name="unitID"
+          Nullable="False"
+          Property="LightSwitchCommonModule:unitcodeItem/Properties[unitID]"
+          StoreGeneratedPattern="Identity"
+          Type="smallint" />
+        <SsdlProperty
+          MaxLength="20"
+          Name="unitEnDesc"
+          Nullable="True"
+          Property="LightSwitchCommonModule:unitcodeItem/Properties[unitEnDesc]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="20"
+          Name="unitDesc"
+          Nullable="False"
+          Property="LightSwitchCommonModule:unitcodeItem/Properties[unitDesc]"
+          Type="nvarchar" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="eorderitem_orderItem">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="eorderitem$orderItem" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:inikierpData/Members[eorderitem_orderItem]/Members[eorder]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="odID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:inikierpData/Members[eorderitem_orderItem]/Members[eorderitem]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="odID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="eorderitem_productCode">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="eorderitem$productCode" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:inikierpData/Members[eorderitem_productCode]/Members[productcode]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="prodID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:inikierpData/Members[eorderitem_productCode]/Members[eorderitem]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="prodID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_eorder_customercode">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_eorder_customercode" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:inikierpData/Members[FK_eorder_customercode]/Members[customercode]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="cusID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:inikierpData/Members[FK_eorder_customercode]/Members[eorder]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="cusID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_invtitlecode_customercode">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_invtitlecode_customercode" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:inikierpData/Members[FK_invtitlecode_customercode]/Members[customercode]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="cusID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:inikierpData/Members[FK_invtitlecode_customercode]/Members[invtitlecode]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="cusID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="productcode_ppID">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="productcode$ppID" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:inikierpData/Members[productcode_ppID]/Members[productclass]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ppID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:inikierpData/Members[productcode_ppID]/Members[productcode]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ppID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="productcode_supID">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="productcode$supID" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:inikierpData/Members[productcode_supID]/Members[suppliercode]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="supID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:inikierpData/Members[productcode_supID]/Members[productcode]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="supID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="sendrecord_sendrecord_ibfk_1">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="sendrecord$sendrecord_ibfk_1" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:inikierpData/Members[sendrecord_sendrecord_ibfk_1]/Members[sendtype]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="sendTypeID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:inikierpData/Members[sendrecord_sendrecord_ibfk_1]/Members[sendrecord]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="sendTypeID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="suppliercode_suppliercode_ibfk_1">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="suppliercode$suppliercode_ibfk_1" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:inikierpData/Members[suppliercode_suppliercode_ibfk_1]/Members[paywaycode]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="payID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:inikierpData/Members[suppliercode_suppliercode_ibfk_1]/Members[suppliercode]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="supPayID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+</ModelFragment>

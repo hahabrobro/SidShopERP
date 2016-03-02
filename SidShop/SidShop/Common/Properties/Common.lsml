@@ -1,0 +1,4319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModelFragment xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <Module
+    Name="LightSwitchCommonModule">
+    <Module.Attributes>
+      <ModuleNamespace
+        Namespace="LightSwitchApplication" />
+      <AutomaticDisplayName
+        Expression="(\p{Ll})(\p{Lu})|_+"
+        Replacement="$1 $2" />
+    </Module.Attributes>
+  </Module>
+  <EntityContainerGroup
+    Name="DataWorkspace">
+    <EntityContainerGroupProperty
+      EntityContainer="Microsoft.LightSwitch.Security:SecurityData"
+      Name="SecurityData">
+      <EntityContainerGroupProperty.Attributes>
+        <Generated />
+        <DisplayName
+          Value="Security Data" />
+        <Description
+          Value="Service that provides access to security-related data." />
+      </EntityContainerGroupProperty.Attributes>
+    </EntityContainerGroupProperty>
+    <EntityContainerGroupProperty
+      EntityContainer="inikierpData"
+      Name="inikierpData" />
+  </EntityContainerGroup>
+  <EntityType
+    Name="cuskindcodeItem">
+    <EntityType.Attributes>
+      <SummaryProperty
+        Property="cuskindcodeItem/Properties[cusDesc]" />
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        IsReadOnly="True"
+        Name="cuskindID"
+        PropertyType=":Int64">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="cusAcc"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            IsFixedLength="True"
+            Value="1" />
+          <DisplayName
+            Value="客戶種類代碼" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="cusDesc"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="20" />
+          <DisplayName
+            Value="客戶種類說明" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="customercodeItem">
+    <EntityType.Attributes>
+      <SummaryProperty
+        Property="customercodeItem/Properties[companyName]" />
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        IsReadOnly="True"
+        Name="cusID"
+        PropertyType=":Int64">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="cusAcc"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            IsFixedLength="True"
+            Value="9" />
+          <DisplayName
+            Value="客戶編號" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="cusKind"
+        PropertyType=":Int16?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <DisplayName
+            Value="客戶種類" />
+          <SupportedValue
+            DisplayName="空白"
+            Value="1" />
+          <SupportedValue
+            DisplayName="個人"
+            Value="2" />
+          <SupportedValue
+            DisplayName="公司"
+            Value="3" />
+          <SupportedValue
+            DisplayName="學校"
+            Value="4" />
+          <SupportedValue
+            DisplayName="政府機關單位"
+            Value="5" />
+          <SupportedValue
+            DisplayName="EBAY"
+            Value="6" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="tel"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="20" />
+          <DisplayName
+            Value="客戶電話" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="simpleComany"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="30" />
+          <DisplayName
+            Value="公司簡稱" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="cusName"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="20" />
+          <DisplayName
+            Value="使用者帳號" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="cusPws"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="10" />
+          <DisplayName
+            Value="使用者密碼" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="companyName"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="50" />
+          <DisplayName
+            Value="公司全名" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="contactName"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="20" />
+          <DisplayName
+            Value="聯絡人全名" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="tax"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            IsFixedLength="True"
+            Value="8" />
+          <DisplayName
+            Value="統一編號" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="zip"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="5" />
+          <DisplayName
+            Value="郵遞區號" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="companyAddress"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="70" />
+          <DisplayName
+            Value="公司地址" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="sendAddress"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="100" />
+          <DisplayName
+            Value="寄送地址" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="taxAddress"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="50" />
+          <DisplayName
+            Value="發票寄送地址" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="cusEmail"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="40" />
+          <DisplayName
+            Value="客戶E-mail" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="payID"
+        PropertyType=":Int16?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <SupportedValue
+            DisplayName="&amp;nbsp;"
+            Value="1" />
+          <SupportedValue
+            DisplayName="現金"
+            Value="2" />
+          <SupportedValue
+            DisplayName="月結"
+            Value="3" />
+          <SupportedValue
+            DisplayName="匯款"
+            Value="4" />
+          <SupportedValue
+            DisplayName="露天-支付連"
+            Value="5" />
+          <SupportedValue
+            DisplayName="露天-支付連信用卡"
+            Value="6" />
+          <SupportedValue
+            DisplayName="公司ATM"
+            Value="7" />
+          <SupportedValue
+            DisplayName="露天-7-11取貨付款"
+            Value="8" />
+          <SupportedValue
+            DisplayName="官網-信用卡"
+            Value="9" />
+          <SupportedValue
+            DisplayName="官網-7-11取貨付款"
+            Value="10" />
+          <SupportedValue
+            DisplayName="官網-虛擬帳戶"
+            Value="11" />
+          <SupportedValue
+            DisplayName="官網-ibon"
+            Value="12" />
+          <SupportedValue
+            DisplayName="ebay-paypal"
+            Value="13" />
+          <SupportedValue
+            DisplayName="宅配到付"
+            Value="14" />
+          <SupportedValue
+            DisplayName="官網-paypal"
+            Value="15" />
+          <SupportedValue
+            DisplayName="宅急便"
+            Value="16" />
+          <SupportedValue
+            DisplayName="雅虎- 輕鬆付"
+            Value="17" />
+          <SupportedValue
+            DisplayName="雅虎- 7-11取貨付款"
+            Value="18" />
+          <SupportedValue
+            DisplayName="雅虎- 全家取貨付款"
+            Value="19" />
+          <SupportedValue
+            DisplayName="樂天-虛擬帳戶"
+            Value="20" />
+          <SupportedValue
+            DisplayName="momo-信用卡"
+            Value="21" />
+          <SupportedValue
+            DisplayName="momo-7-11取貨付款"
+            Value="22" />
+          <SupportedValue
+            DisplayName="momo-7-11取貨"
+            Value="23" />
+          <SupportedValue
+            DisplayName="momo-ATM"
+            Value="24" />
+          <SupportedValue
+            DisplayName="momo- ibon"
+            Value="25" />
+          <SupportedValue
+            DisplayName="匯入淩琦"
+            Value="26" />
+          <DisplayName
+            Value="付款方式" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="invTitleCode"
+        PropertyType=":Int16?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <DisplayName
+            Value="發票抬頭" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="contactMobile"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="25" />
+          <DisplayName
+            Value="連絡人手機" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="buildDate"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Kind="Unspecified"
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+          <DisplayName
+            Value="建立日期" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="cusMemo"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength />
+          <DisplayName
+            Value="客戶備註" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="cClerk"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="rutenId"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="25" />
+          <DisplayName
+            Value="露天帳號" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Association="FK_eorder_customercode"
+        FromEnd="customercode"
+        Name="eorder"
+        ToEnd="eorder" />
+      <NavigationProperty
+        Association="FK_invtitlecode_customercode"
+        FromEnd="customercode"
+        Name="invtitlecode1"
+        ToEnd="invtitlecode" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityContainer
+    Name="inikierpData">
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="cuskindcodeItem"
+      Name="cuskindcode" />
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="customercodeItem"
+      Name="customercode" />
+    <SubmitOperation
+      Name="SaveChanges" />
+    <QueryOperation
+      Name="cuskindcode_Single"
+      ReturnType="cuskindcodeItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="傳回參數所指定識別的實體。" />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="cuskindID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="cuskindID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="cuskindcode" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="cuskindID"
+        ParameterType=":Int64?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="要擷取之實體的 'cuskindID' 索引鍵屬性值。" />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="cuskindcode_SingleOrDefault"
+      ReturnType="cuskindcodeItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="傳回參數所指定識別的實體，或是如果沒有這樣的實體存在，則傳回 null。" />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="cuskindID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="cuskindID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="cuskindcode" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="cuskindID"
+        ParameterType=":Int64?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="要擷取之實體的 'cuskindID' 索引鍵屬性值。" />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="customercode_Single"
+      ReturnType="customercodeItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="傳回參數所指定識別的實體。" />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="cusID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="cusID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="customercode" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="cusID"
+        ParameterType=":Int64?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="要擷取之實體的 'cusID' 索引鍵屬性值。" />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="customercode_SingleOrDefault"
+      ReturnType="customercodeItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="傳回參數所指定識別的實體，或是如果沒有這樣的實體存在，則傳回 null。" />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="cusID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="cusID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="customercode" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="cusID"
+        ParameterType=":Int64?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="要擷取之實體的 'cusID' 索引鍵屬性值。" />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="CustomerQuery"
+      ReturnType="customercodeItem*">
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="And">
+            <BinaryExpression.Left>
+              <BinaryExpression
+                NodeType="And">
+                <BinaryExpression.Left>
+                  <BinaryExpression
+                    NodeType="And">
+                    <BinaryExpression.Left>
+                      <BinaryExpression
+                        NodeType="Equal">
+                        <BinaryExpression.Left>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="companyName" />
+                          </ChainExpression>
+                        </BinaryExpression.Left>
+                        <BinaryExpression.Right>
+                          <ParameterExpression
+                            Parameter="companyName" />
+                        </BinaryExpression.Right>
+                      </BinaryExpression>
+                    </BinaryExpression.Left>
+                    <BinaryExpression.Right>
+                      <BinaryExpression
+                        NodeType="Equal">
+                        <BinaryExpression.Left>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="contactName" />
+                          </ChainExpression>
+                        </BinaryExpression.Left>
+                        <BinaryExpression.Right>
+                          <ParameterExpression
+                            Parameter="contactName" />
+                        </BinaryExpression.Right>
+                      </BinaryExpression>
+                    </BinaryExpression.Right>
+                  </BinaryExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <BinaryExpression
+                    NodeType="Equal">
+                    <BinaryExpression.Left>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="simpleComany" />
+                      </ChainExpression>
+                    </BinaryExpression.Left>
+                    <BinaryExpression.Right>
+                      <ParameterExpression
+                        Parameter="simpleComany" />
+                    </BinaryExpression.Right>
+                  </BinaryExpression>
+                </BinaryExpression.Right>
+              </BinaryExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <BinaryExpression
+                NodeType="Equal">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="cusKind" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ParameterExpression
+                    Parameter="cusKind" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="customercode" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        IsOptional="True"
+        Name="companyName"
+        ParameterType=":String?" />
+      <QueryOperationParameter
+        IsOptional="True"
+        Name="contactName"
+        ParameterType=":String?" />
+      <QueryOperationParameter
+        IsOptional="True"
+        Name="simpleComany"
+        ParameterType=":String?" />
+      <QueryOperationParameter
+        IsOptional="True"
+        Name="cusKind"
+        ParameterType=":Int16?" />
+    </QueryOperation>
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="sendrecordItem"
+      Name="sendrecord" />
+    <QueryOperation
+      Name="sendrecord_Single"
+      ReturnType="sendrecordItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="傳回參數所指定識別的實體。" />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="sendRecordID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="sendRecordID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="sendrecord" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="sendRecordID"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="要擷取之實體的 'sendRecordID' 索引鍵屬性值。" />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="sendrecord_SingleOrDefault"
+      ReturnType="sendrecordItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="傳回參數所指定識別的實體，或是如果沒有這樣的實體存在，則傳回 null。" />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="sendRecordID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="sendRecordID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="sendrecord" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="sendRecordID"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="要擷取之實體的 'sendRecordID' 索引鍵屬性值。" />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="eorderItem"
+      Name="eorder" />
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="sendtypeItem"
+      Name="sendtype" />
+    <AssociationSet
+      Association="sendrecord_sendrecord_ibfk_1"
+      Name="sendrecord_sendrecord_ibfk_1">
+      <AssociationSetEnd
+        EntitySet="sendtype"
+        Name="sendtype" />
+      <AssociationSetEnd
+        EntitySet="sendrecord"
+        Name="sendrecord" />
+    </AssociationSet>
+    <QueryOperation
+      Name="eorder_Single"
+      ReturnType="eorderItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="傳回參數所指定識別的實體。" />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="odID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="odID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="eorder" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="odID"
+        ParameterType=":Int64?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="要擷取之實體的 'odID' 索引鍵屬性值。" />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="eorder_SingleOrDefault"
+      ReturnType="eorderItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="傳回參數所指定識別的實體，或是如果沒有這樣的實體存在，則傳回 null。" />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="odID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="odID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="eorder" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="odID"
+        ParameterType=":Int64?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="要擷取之實體的 'odID' 索引鍵屬性值。" />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="sendtype_Single"
+      ReturnType="sendtypeItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="傳回參數所指定識別的實體。" />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="sendTypeID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="sendTypeID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="sendtype" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="sendTypeID"
+        ParameterType=":Int16?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="要擷取之實體的 'sendTypeID' 索引鍵屬性值。" />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="sendtype_SingleOrDefault"
+      ReturnType="sendtypeItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="傳回參數所指定識別的實體，或是如果沒有這樣的實體存在，則傳回 null。" />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="sendTypeID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="sendTypeID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="sendtype" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="sendTypeID"
+        ParameterType=":Int16?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="要擷取之實體的 'sendTypeID' 索引鍵屬性值。" />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="SendRecordQuery"
+      ReturnType="sendrecordItem*">
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="And">
+            <BinaryExpression.Left>
+              <BinaryExpression
+                NodeType="Equal">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="sendtypeItem" />
+                    <MemberExpression
+                      Member="sendTypeName" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ParameterExpression
+                    Parameter="sendTypeName" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <BinaryExpression
+                NodeType="Equal">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="sendDate" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ParameterExpression
+                    Parameter="sendDate" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.SortCriteria>
+        <SortCriterion
+          Direction="Descending">
+          <ChainExpression>
+            <MemberExpression
+              Member="sendDate" />
+          </ChainExpression>
+        </SortCriterion>
+      </QueryOperation.SortCriteria>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="sendrecord" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        IsOptional="True"
+        Name="sendTypeName"
+        ParameterType=":String?" />
+      <QueryOperationParameter
+        IsOptional="True"
+        Name="sendDate"
+        ParameterType=":Date?" />
+    </QueryOperation>
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="eorderitemItem"
+      Name="eorderitem" />
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="eorderstatuscodeItem"
+      Name="eorderstatuscode" />
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="productclassItem"
+      Name="productclass" />
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="productcodeItem"
+      Name="productcode" />
+    <AssociationSet
+      Association="eorderitem_orderItem"
+      Name="eorderitem_orderItem">
+      <AssociationSetEnd
+        EntitySet="eorder"
+        Name="eorder" />
+      <AssociationSetEnd
+        EntitySet="eorderitem"
+        Name="eorderitem" />
+    </AssociationSet>
+    <AssociationSet
+      Association="eorderitem_productCode"
+      Name="eorderitem_productCode">
+      <AssociationSetEnd
+        EntitySet="productcode"
+        Name="productcode" />
+      <AssociationSetEnd
+        EntitySet="eorderitem"
+        Name="eorderitem" />
+    </AssociationSet>
+    <AssociationSet
+      Association="productcode_ppID"
+      Name="productcode_ppID">
+      <AssociationSetEnd
+        EntitySet="productclass"
+        Name="productclass" />
+      <AssociationSetEnd
+        EntitySet="productcode"
+        Name="productcode" />
+    </AssociationSet>
+    <QueryOperation
+      Name="eorderitem_Single"
+      ReturnType="eorderitemItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="傳回參數所指定識別的實體。" />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="odItemID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="odItemID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="eorderitem" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="odItemID"
+        ParameterType=":Int64?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="要擷取之實體的 'odItemID' 索引鍵屬性值。" />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="eorderitem_SingleOrDefault"
+      ReturnType="eorderitemItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="傳回參數所指定識別的實體，或是如果沒有這樣的實體存在，則傳回 null。" />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="odItemID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="odItemID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="eorderitem" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="odItemID"
+        ParameterType=":Int64?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="要擷取之實體的 'odItemID' 索引鍵屬性值。" />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="eorderstatuscode_Single"
+      ReturnType="eorderstatuscodeItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="傳回參數所指定識別的實體。" />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="eStatusID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="eStatusID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="eorderstatuscode" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="eStatusID"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="要擷取之實體的 'eStatusID' 索引鍵屬性值。" />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="eorderstatuscode_SingleOrDefault"
+      ReturnType="eorderstatuscodeItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="傳回參數所指定識別的實體，或是如果沒有這樣的實體存在，則傳回 null。" />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="eStatusID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="eStatusID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="eorderstatuscode" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="eStatusID"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="要擷取之實體的 'eStatusID' 索引鍵屬性值。" />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="productclass_Single"
+      ReturnType="productclassItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="傳回參數所指定識別的實體。" />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="ppID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="ppID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="productclass" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="ppID"
+        ParameterType=":Int16?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="要擷取之實體的 'ppID' 索引鍵屬性值。" />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="productclass_SingleOrDefault"
+      ReturnType="productclassItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="傳回參數所指定識別的實體，或是如果沒有這樣的實體存在，則傳回 null。" />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="ppID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="ppID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="productclass" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="ppID"
+        ParameterType=":Int16?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="要擷取之實體的 'ppID' 索引鍵屬性值。" />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="productcode_Single"
+      ReturnType="productcodeItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="傳回參數所指定識別的實體。" />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="prodID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="prodID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="productcode" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="prodID"
+        ParameterType=":Int64?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="要擷取之實體的 'prodID' 索引鍵屬性值。" />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="productcode_SingleOrDefault"
+      ReturnType="productcodeItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="傳回參數所指定識別的實體，或是如果沒有這樣的實體存在，則傳回 null。" />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="prodID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="prodID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="productcode" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="prodID"
+        ParameterType=":Int64?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="要擷取之實體的 'prodID' 索引鍵屬性值。" />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <AssociationSet
+      Association="FK_eorder_customercode"
+      Name="FK_eorder_customercode">
+      <AssociationSetEnd
+        EntitySet="customercode"
+        Name="customercode" />
+      <AssociationSetEnd
+        EntitySet="eorder"
+        Name="eorder" />
+    </AssociationSet>
+    <QueryOperation
+      Name="EorderQuery"
+      ReturnType="eorderItem*">
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="And">
+            <BinaryExpression.Left>
+              <BinaryExpression
+                NodeType="And">
+                <BinaryExpression.Left>
+                  <BinaryExpression
+                    NodeType="And">
+                    <BinaryExpression.Left>
+                      <BinaryExpression
+                        NodeType="And">
+                        <BinaryExpression.Left>
+                          <BinaryExpression
+                            NodeType="And">
+                            <BinaryExpression.Left>
+                              <BinaryExpression
+                                NodeType="And">
+                                <BinaryExpression.Left>
+                                  <BinaryExpression
+                                    NodeType="Equal">
+                                    <BinaryExpression.Left>
+                                      <ChainExpression>
+                                        <MemberExpression
+                                          Member="customercodeItem1" />
+                                        <MemberExpression
+                                          Member="companyName" />
+                                      </ChainExpression>
+                                    </BinaryExpression.Left>
+                                    <BinaryExpression.Right>
+                                      <ParameterExpression
+                                        Parameter="companyName" />
+                                    </BinaryExpression.Right>
+                                  </BinaryExpression>
+                                </BinaryExpression.Left>
+                                <BinaryExpression.Right>
+                                  <BinaryExpression
+                                    NodeType="Equal">
+                                    <BinaryExpression.Left>
+                                      <ChainExpression>
+                                        <MemberExpression
+                                          Member="customercodeItem1" />
+                                        <MemberExpression
+                                          Member="contactName" />
+                                      </ChainExpression>
+                                    </BinaryExpression.Left>
+                                    <BinaryExpression.Right>
+                                      <ParameterExpression
+                                        Parameter="companyName" />
+                                    </BinaryExpression.Right>
+                                  </BinaryExpression>
+                                </BinaryExpression.Right>
+                              </BinaryExpression>
+                            </BinaryExpression.Left>
+                            <BinaryExpression.Right>
+                              <BinaryExpression
+                                NodeType="Equal">
+                                <BinaryExpression.Left>
+                                  <ChainExpression>
+                                    <MemberExpression
+                                      Member="customercodeItem1" />
+                                    <MemberExpression
+                                      Member="cusName" />
+                                  </ChainExpression>
+                                </BinaryExpression.Left>
+                                <BinaryExpression.Right>
+                                  <ParameterExpression
+                                    Parameter="companyName" />
+                                </BinaryExpression.Right>
+                              </BinaryExpression>
+                            </BinaryExpression.Right>
+                          </BinaryExpression>
+                        </BinaryExpression.Left>
+                        <BinaryExpression.Right>
+                          <BinaryExpression
+                            NodeType="Equal">
+                            <BinaryExpression.Left>
+                              <ChainExpression>
+                                <MemberExpression
+                                  Member="orderNo" />
+                              </ChainExpression>
+                            </BinaryExpression.Left>
+                            <BinaryExpression.Right>
+                              <ParameterExpression
+                                Parameter="orderNo" />
+                            </BinaryExpression.Right>
+                          </BinaryExpression>
+                        </BinaryExpression.Right>
+                      </BinaryExpression>
+                    </BinaryExpression.Left>
+                    <BinaryExpression.Right>
+                      <BinaryExpression
+                        NodeType="GreaterThanOrEqual">
+                        <BinaryExpression.Left>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="eoDate" />
+                          </ChainExpression>
+                        </BinaryExpression.Left>
+                        <BinaryExpression.Right>
+                          <ParameterExpression
+                            Parameter="eoDate" />
+                        </BinaryExpression.Right>
+                      </BinaryExpression>
+                    </BinaryExpression.Right>
+                  </BinaryExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <BinaryExpression
+                    NodeType="LessThanOrEqual">
+                    <BinaryExpression.Left>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="eoDate" />
+                      </ChainExpression>
+                    </BinaryExpression.Left>
+                    <BinaryExpression.Right>
+                      <ParameterExpression
+                        Parameter="eoDate1" />
+                    </BinaryExpression.Right>
+                  </BinaryExpression>
+                </BinaryExpression.Right>
+              </BinaryExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <BinaryExpression
+                NodeType="Equal">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="storeNumber" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ParameterExpression
+                    Parameter="storeNumber" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.SortCriteria>
+        <SortCriterion
+          Direction="Descending">
+          <ChainExpression>
+            <MemberExpression
+              Member="odID" />
+          </ChainExpression>
+        </SortCriterion>
+      </QueryOperation.SortCriteria>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="eorder" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        IsOptional="True"
+        Name="companyName"
+        ParameterType=":String?" />
+      <QueryOperationParameter
+        IsOptional="True"
+        Name="orderNo"
+        ParameterType=":String?" />
+      <QueryOperationParameter
+        IsOptional="True"
+        Name="eoDate"
+        ParameterType=":Date?" />
+      <QueryOperationParameter
+        IsOptional="True"
+        Name="eoDate1"
+        ParameterType=":Date?" />
+      <QueryOperationParameter
+        IsOptional="True"
+        Name="storeNumber"
+        ParameterType=":String?" />
+    </QueryOperation>
+    <QueryOperation
+      Name="SendRecordForEorder"
+      ReturnType="sendrecordItem*">
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="odID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="odID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="sendrecord" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        IsOptional="True"
+        Name="odID"
+        ParameterType=":Int64?" />
+    </QueryOperation>
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="employeecodeItem"
+      Name="employeecode" />
+    <QueryOperation
+      Name="employeecode_Single"
+      ReturnType="employeecodeItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="傳回參數所指定識別的實體。" />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="empID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="empID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="employeecode" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="empID"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="要擷取之實體的 'empID' 索引鍵屬性值。" />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="employeecode_SingleOrDefault"
+      ReturnType="employeecodeItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="傳回參數所指定識別的實體，或是如果沒有這樣的實體存在，則傳回 null。" />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="empID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="empID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="employeecode" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="empID"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="要擷取之實體的 'empID' 索引鍵屬性值。" />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="invtitlecodeItem"
+      Name="invtitlecode" />
+    <QueryOperation
+      Name="invtitlecode_Single"
+      ReturnType="invtitlecodeItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="傳回參數所指定識別的實體。" />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="invTitleCode" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="invTitleCode" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="invtitlecode" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="invTitleCode"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="要擷取之實體的 'invTitleCode' 索引鍵屬性值。" />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="invtitlecode_SingleOrDefault"
+      ReturnType="invtitlecodeItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="傳回參數所指定識別的實體，或是如果沒有這樣的實體存在，則傳回 null。" />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="invTitleCode" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="invTitleCode" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="invtitlecode" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="invTitleCode"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="要擷取之實體的 'invTitleCode' 索引鍵屬性值。" />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <AssociationSet
+      Association="FK_invtitlecode_customercode"
+      Name="FK_invtitlecode_customercode">
+      <AssociationSetEnd
+        EntitySet="customercode"
+        Name="customercode" />
+      <AssociationSetEnd
+        EntitySet="invtitlecode"
+        Name="invtitlecode" />
+    </AssociationSet>
+    <QueryOperation
+      Name="invtitlecodeForEorder"
+      ReturnType="invtitlecodeItem*">
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="And">
+            <BinaryExpression.Left>
+              <BinaryExpression
+                NodeType="Equal">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="customercodeItem1" />
+                    <MemberExpression
+                      Member="cusID" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ParameterExpression
+                    Parameter="cusID" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <BinaryExpression
+                NodeType="Equal">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="invTitleCode" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ParameterExpression
+                    Parameter="invTitleCode" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="invtitlecode" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        IsOptional="True"
+        Name="cusID"
+        ParameterType=":Int64?" />
+      <QueryOperationParameter
+        IsOptional="True"
+        Name="invTitleCode"
+        ParameterType=":Int32?" />
+    </QueryOperation>
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="unitcodeItem"
+      Name="unitcode" />
+    <QueryOperation
+      Name="unitcode_Single"
+      ReturnType="unitcodeItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="傳回參數所指定識別的實體。" />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="unitID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="unitID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="unitcode" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="unitID"
+        ParameterType=":Int16?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="要擷取之實體的 'unitID' 索引鍵屬性值。" />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="unitcode_SingleOrDefault"
+      ReturnType="unitcodeItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="傳回參數所指定識別的實體，或是如果沒有這樣的實體存在，則傳回 null。" />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="unitID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="unitID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="unitcode" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="unitID"
+        ParameterType=":Int16?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="要擷取之實體的 'unitID' 索引鍵屬性值。" />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="punitcodeItem"
+      Name="punitcode" />
+    <QueryOperation
+      Name="punitcode_Single"
+      ReturnType="punitcodeItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="傳回參數所指定識別的實體。" />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="pUnitID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="pUnitID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="punitcode" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="pUnitID"
+        ParameterType=":Int16?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="要擷取之實體的 'pUnitID' 索引鍵屬性值。" />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="punitcode_SingleOrDefault"
+      ReturnType="punitcodeItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="傳回參數所指定識別的實體，或是如果沒有這樣的實體存在，則傳回 null。" />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="pUnitID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="pUnitID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="punitcode" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="pUnitID"
+        ParameterType=":Int16?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="要擷取之實體的 'pUnitID' 索引鍵屬性值。" />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="suppliercodeItem"
+      Name="suppliercode" />
+    <AssociationSet
+      Association="productcode_supID"
+      Name="productcode_supID">
+      <AssociationSetEnd
+        EntitySet="suppliercode"
+        Name="suppliercode" />
+      <AssociationSetEnd
+        EntitySet="productcode"
+        Name="productcode" />
+    </AssociationSet>
+    <QueryOperation
+      Name="suppliercode_Single"
+      ReturnType="suppliercodeItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="傳回參數所指定識別的實體。" />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="supID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="supID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="suppliercode" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="supID"
+        ParameterType=":Int64?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="要擷取之實體的 'supID' 索引鍵屬性值。" />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="suppliercode_SingleOrDefault"
+      ReturnType="suppliercodeItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="傳回參數所指定識別的實體，或是如果沒有這樣的實體存在，則傳回 null。" />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="supID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="supID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="suppliercode" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="supID"
+        ParameterType=":Int64?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="要擷取之實體的 'supID' 索引鍵屬性值。" />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="ProductCodeQuery"
+      ReturnType="productcodeItem*">
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="And">
+            <BinaryExpression.Left>
+              <BinaryExpression
+                NodeType="And">
+                <BinaryExpression.Left>
+                  <BinaryExpression
+                    NodeType="Contains">
+                    <BinaryExpression.Left>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="prodDesc" />
+                      </ChainExpression>
+                    </BinaryExpression.Left>
+                    <BinaryExpression.Right>
+                      <ParameterExpression
+                        Parameter="prodDesc" />
+                    </BinaryExpression.Right>
+                  </BinaryExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <BinaryExpression
+                    NodeType="Contains">
+                    <BinaryExpression.Left>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="prodSeq" />
+                      </ChainExpression>
+                    </BinaryExpression.Left>
+                    <BinaryExpression.Right>
+                      <ParameterExpression
+                        Parameter="prodSeq" />
+                    </BinaryExpression.Right>
+                  </BinaryExpression>
+                </BinaryExpression.Right>
+              </BinaryExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <BinaryExpression
+                NodeType="Contains">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="pStorageSpaces" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ParameterExpression
+                    Parameter="pStorageSpaces" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="productcode" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        IsOptional="True"
+        Name="prodDesc"
+        ParameterType=":String?" />
+      <QueryOperationParameter
+        IsOptional="True"
+        Name="prodSeq"
+        ParameterType=":String?" />
+      <QueryOperationParameter
+        IsOptional="True"
+        Name="pStorageSpaces"
+        ParameterType=":String?" />
+    </QueryOperation>
+    <QueryOperation
+      Name="SupplierCodeQuery"
+      ReturnType="suppliercodeItem*">
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="And">
+            <BinaryExpression.Left>
+              <BinaryExpression
+                NodeType="Contains">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="supName" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ParameterExpression
+                    Parameter="supName" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <BinaryExpression
+                NodeType="Equal">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="supTax" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ParameterExpression
+                    Parameter="supTax" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="suppliercode" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        IsOptional="True"
+        Name="supName"
+        ParameterType=":String?" />
+      <QueryOperationParameter
+        IsOptional="True"
+        Name="supTax"
+        ParameterType=":String?" />
+    </QueryOperation>
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="paywaycodeItem"
+      Name="paywaycode" />
+    <AssociationSet
+      Association="suppliercode_suppliercode_ibfk_1"
+      Name="suppliercode_suppliercode_ibfk_1">
+      <AssociationSetEnd
+        EntitySet="paywaycode"
+        Name="paywaycode" />
+      <AssociationSetEnd
+        EntitySet="suppliercode"
+        Name="suppliercode" />
+    </AssociationSet>
+    <QueryOperation
+      Name="paywaycode_Single"
+      ReturnType="paywaycodeItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="傳回參數所指定識別的實體。" />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="payID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="payID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="paywaycode" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="payID"
+        ParameterType=":Int16?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="要擷取之實體的 'payID' 索引鍵屬性值。" />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="paywaycode_SingleOrDefault"
+      ReturnType="paywaycodeItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="傳回參數所指定識別的實體，或是如果沒有這樣的實體存在，則傳回 null。" />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="payID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="payID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="paywaycode" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="payID"
+        ParameterType=":Int16?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="要擷取之實體的 'payID' 索引鍵屬性值。" />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <EntityType
+    Name="sendrecordItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        IsReadOnly="True"
+        Name="sendRecordID"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="CorpID"
+        PropertyType=":Int16?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="sendDate"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Kind="Unspecified"
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+          <DisplayName
+            Value="寄送日期" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="money"
+        PropertyType=":Single?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <DisplayName
+            Value="寄送金額" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="sendNum"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="30" />
+          <DisplayName
+            Value="寄送號碼" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="weight"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="10"
+            Scale="0" />
+          <NotSearchable />
+          <DisplayName
+            Value="重量" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="note"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="30" />
+          <DisplayName
+            Value="備註" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Association="sendrecord_sendrecord_ibfk_1"
+        FromEnd="sendrecord"
+        Name="sendtypeItem"
+        ToEnd="sendtype" />
+      <EntityProperty
+        Name="odID"
+        PropertyType=":Int64">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="eorderItem">
+    <EntityType.Attributes>
+      <DefaultScreen
+        Value="LightSwitchApplication:eorderItemDetail">
+        <DefaultScreen.Attributes>
+          <ScreenParameterMapping
+            KeyProperty="eorderItem/Properties[odID]"
+            ScreenParameter="LightSwitchApplication:eorderItemDetail/Properties[eorderItemodID]" />
+        </DefaultScreen.Attributes>
+      </DefaultScreen>
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        IsReadOnly="True"
+        Name="odID"
+        PropertyType=":Int64">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="orderNo"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="16" />
+          <DisplayName
+            Value="出貨單號" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="storeNumber"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="30" />
+          <DisplayName
+            Value="賣場訂單編號" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="storeID"
+        PropertyType=":Int16?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <DisplayName
+            Value="賣場來源" />
+          <SupportedValue
+            DisplayName="eBay"
+            Value="1" />
+          <SupportedValue
+            DisplayName="Pchome"
+            Value="2" />
+          <SupportedValue
+            DisplayName="Yahoo"
+            Value="3" />
+          <SupportedValue
+            DisplayName="露天ICshpping"
+            Value="4" />
+          <SupportedValue
+            DisplayName="露天Ichome3689"
+            Value="5" />
+          <SupportedValue
+            DisplayName="露天59show"
+            Value="6" />
+          <SupportedValue
+            DisplayName="官網"
+            Value="7" />
+          <SupportedValue
+            DisplayName="Email"
+            Value="8" />
+          <SupportedValue
+            DisplayName="電話"
+            Value="9" />
+          <SupportedValue
+            DisplayName="樂天"
+            Value="10" />
+          <SupportedValue
+            DisplayName="MOMO"
+            Value="11" />
+          <SupportedValue
+            DisplayName="露天icshop"
+            Value="12" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="langID"
+        PropertyType=":Int16?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <DisplayName
+            Value="語系" />
+          <SupportedValue
+            DisplayName="EN"
+            Value="1" />
+          <SupportedValue
+            DisplayName="CH"
+            Value="2" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="payID"
+        PropertyType=":Int16?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <SupportedValue
+            DisplayName="&amp;nbsp;"
+            Value="1" />
+          <SupportedValue
+            DisplayName="現金"
+            Value="2" />
+          <SupportedValue
+            DisplayName="月結"
+            Value="3" />
+          <SupportedValue
+            DisplayName="匯款"
+            Value="4" />
+          <SupportedValue
+            DisplayName="露天-支付連"
+            Value="5" />
+          <SupportedValue
+            DisplayName="露天-支付連信用卡"
+            Value="6" />
+          <SupportedValue
+            DisplayName="公司ATM"
+            Value="7" />
+          <SupportedValue
+            DisplayName="露天-7-11取貨付款"
+            Value="8" />
+          <SupportedValue
+            DisplayName="官網-信用卡"
+            Value="9" />
+          <SupportedValue
+            DisplayName="官網-7-11取貨付款"
+            Value="10" />
+          <SupportedValue
+            DisplayName="官網-虛擬帳戶"
+            Value="11" />
+          <SupportedValue
+            DisplayName="官網-ibon"
+            Value="12" />
+          <SupportedValue
+            DisplayName="EBay-Paypal"
+            Value="13" />
+          <SupportedValue
+            DisplayName="宅配到府"
+            Value="14" />
+          <SupportedValue
+            DisplayName="官網Paypal"
+            Value="15" />
+          <SupportedValue
+            DisplayName="宅急便"
+            Value="16" />
+          <SupportedValue
+            DisplayName="雅虎-輕鬆付"
+            Value="17" />
+          <SupportedValue
+            DisplayName="雅虎-7-11取貨付款"
+            Value="18" />
+          <SupportedValue
+            DisplayName="雅虎-全加取貨付款"
+            Value="19" />
+          <SupportedValue
+            DisplayName="樂天-虛擬帳戶"
+            Value="20" />
+          <SupportedValue
+            DisplayName="momo-信用卡"
+            Value="21" />
+          <SupportedValue
+            DisplayName="momo-7-11取貨付款"
+            Value="22" />
+          <SupportedValue
+            DisplayName="momo-7-11取貨"
+            Value="23" />
+          <SupportedValue
+            DisplayName="momo-ATM"
+            Value="24" />
+          <SupportedValue
+            DisplayName="momo-ibon"
+            Value="25" />
+          <DisplayName
+            Value="金流方式" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="invNo"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="10" />
+          <DisplayName
+            Value="發票號碼" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="total"
+        PropertyType=":Double?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <DisplayName
+            Value="訂單總金額" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="tax"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="8"
+            Scale="0" />
+          <NotSearchable />
+          <DisplayName
+            Value="稅額" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="noTax"
+        PropertyType=":Double?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <DisplayName
+            Value="稅前" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="sendID"
+        PropertyType=":Int16?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <SupportedValue
+            DisplayName="未指定"
+            Value="1" />
+          <SupportedValue
+            DisplayName="郵寄"
+            Value="2" />
+          <SupportedValue
+            DisplayName="郵寄限時"
+            Value="3" />
+          <SupportedValue
+            DisplayName="自取"
+            Value="4" />
+          <SupportedValue
+            DisplayName="宅急便"
+            Value="5" />
+          <SupportedValue
+            DisplayName="7-11取貨"
+            Value="6" />
+          <SupportedValue
+            DisplayName="7-11付款"
+            Value="7" />
+          <SupportedValue
+            DisplayName="宅配到付"
+            Value="8" />
+          <SupportedValue
+            DisplayName="全家付款"
+            Value="9" />
+          <SupportedValue
+            DisplayName="官網7-11付款"
+            Value="10" />
+          <SupportedValue
+            DisplayName="大榮"
+            Value="11" />
+          <DisplayName
+            Value="物流方式" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="eoClerk"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+          <SupportedValue
+            DisplayName="鐘怡君"
+            Value="6" />
+          <SupportedValue
+            DisplayName="戴汝韻"
+            Value="7" />
+          <SupportedValue
+            DisplayName="李聖佳"
+            Value="11" />
+          <SupportedValue
+            DisplayName="鐘依純"
+            Value="22" />
+          <SupportedValue
+            DisplayName="林采臻"
+            Value="28" />
+          <DisplayName
+            Value="經辦人員" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="curID"
+        PropertyType=":Int16?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <SupportedValue
+            DisplayName="台幣"
+            Value="1" />
+          <SupportedValue
+            DisplayName="人民幣"
+            Value="2" />
+          <SupportedValue
+            DisplayName="美金"
+            Value="3" />
+          <SupportedValue
+            DisplayName="日幣"
+            Value="4" />
+          <SupportedValue
+            DisplayName="韓元"
+            Value="5" />
+          <DisplayName
+            Value="幣別" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="eoDate"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Kind="Unspecified"
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+          <DisplayName
+            Value="訂單日期" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="isTax"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            IsFixedLength="True"
+            Value="1" />
+          <DisplayName
+            Value="是否含稅" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="invTitleCode"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <DisplayName
+            Value="發票抬頭" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="isMerger"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            IsFixedLength="True"
+            Value="1" />
+          <DisplayName
+            Value="發票是否合併項目" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="isClose"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            IsFixedLength="True"
+            Value="1" />
+          <DisplayName
+            Value="是否結案" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="isPayment"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            IsFixedLength="True"
+            Value="1" />
+          <DisplayName
+            Value="是否入帳" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="eStatusID"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <SupportedValue
+            DisplayName="已出貨"
+            Value="8" />
+          <SupportedValue
+            DisplayName="已收到匯款"
+            Value="3" />
+          <SupportedValue
+            DisplayName="已結案"
+            Value="9" />
+          <SupportedValue
+            DisplayName="訂單取消"
+            Value="10" />
+          <SupportedValue
+            DisplayName="訂單缺貨"
+            Value="5" />
+          <SupportedValue
+            DisplayName="訂單審核"
+            Value="1" />
+          <SupportedValue
+            DisplayName="訂單確認，可以匯款"
+            Value="2" />
+          <SupportedValue
+            DisplayName="現貨先寄"
+            Value="6" />
+          <SupportedValue
+            DisplayName="檢貨中，準備出貨"
+            Value="4" />
+          <SupportedValue
+            DisplayName="補寄商品"
+            Value="7" />
+          <DisplayName
+            Value="訂單狀態" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="payment_no"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="30" />
+          <DisplayName
+            Value="寄貨便代碼" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="eoMemo"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength />
+          <DisplayName
+            Value="說明{備註}" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="companyMemo"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength />
+          <DisplayName
+            Value="客戶互動備註" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="shipment"
+        PropertyType=":Int16?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <DisplayName
+            Value="運費?" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Association="eorderitem_orderItem"
+        FromEnd="eorder"
+        Name="eorderitem1"
+        ToEnd="eorderitem" />
+      <NavigationProperty
+        Association="FK_eorder_customercode"
+        FromEnd="eorder"
+        Name="customercodeItem1"
+        ToEnd="customercode">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="公司全民" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
+      <EntityProperty
+        Name="CountTotal"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Computed />
+          <DisplayName
+            Value="CountTotal" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        IsReadOnly="True"
+        Name="CountTax"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Computed />
+          <NotSearchable />
+          <NotSortable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        IsReadOnly="True"
+        Name="CountNoTax"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Computed />
+          <NotSearchable />
+          <NotSortable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="sendtypeItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="sendTypeID"
+        PropertyType=":Int16">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="sendTypeName"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="30" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Association="sendrecord_sendrecord_ibfk_1"
+        FromEnd="sendtype"
+        Name="sendrecord"
+        ToEnd="sendrecord" />
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="sendrecord_sendrecord_ibfk_1">
+    <AssociationEnd
+      EntityType="sendtypeItem"
+      Multiplicity="One"
+      Name="sendtype">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Unset" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      EntityType="sendrecordItem"
+      Multiplicity="Many"
+      Name="sendrecord" />
+  </Association>
+  <EntityType
+    Name="eorderitemItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        IsReadOnly="True"
+        Name="odItemID"
+        PropertyType=":Int64">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="invi"
+        PropertyType=":Int64?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <DisplayName
+            Value="發票流水號" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="disCount"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="3" />
+          <DisplayName
+            Value="折數" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="qty"
+        PropertyType=":Double?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <DisplayName
+            Value="數量" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="iunitDesc"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="10" />
+          <DisplayName
+            Value="單位" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="unitPrice"
+        PropertyType=":Double?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <DisplayName
+            Value="出售價" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="isValue"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            IsFixedLength="True"
+            Value="1" />
+          <DisplayName
+            Value="有效" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="oldItemPrID"
+        PropertyType=":Int64?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <DisplayName
+            Value="若是將產品項目做交換將舊的產品代號放在此" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="deliveryDate"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Kind="Unspecified"
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+          <DisplayName
+            Value="交貨日期" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="note"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="30" />
+          <DisplayName
+            Value="備註" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Association="eorderitem_orderItem"
+        FromEnd="eorderitem"
+        Name="eorderItem1"
+        ToEnd="eorder" />
+      <NavigationProperty
+        Association="eorderitem_productCode"
+        FromEnd="eorderitem"
+        Name="productcodeItem"
+        ToEnd="productcode" />
+      <EntityProperty
+        IsReadOnly="True"
+        Name="ProdDesc"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Computed />
+          <NotSortable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        IsReadOnly="True"
+        Name="SubTotal"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Computed />
+          <NotSearchable />
+          <NotSortable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="isPrint"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <DisplayName
+            Value="是否列印條碼" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="eorderstatuscodeItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        IsReadOnly="True"
+        Name="eStatusID"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="esDesc"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="40" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="productclassItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        IsReadOnly="True"
+        Name="ppID"
+        PropertyType=":Int16">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="ppNum"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="5" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ppName"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="70" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Association="productcode_ppID"
+        FromEnd="productclass"
+        Name="productcode"
+        ToEnd="productcode" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="productcodeItem">
+    <EntityType.Attributes>
+      <SummaryProperty
+        Property="productcodeItem/Properties[prodSeq]" />
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        IsReadOnly="True"
+        Name="prodID"
+        PropertyType=":Int64">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="prodAcc"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="12" />
+          <DisplayName
+            Value="產品代碼" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="prodDesc"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="60" />
+          <DisplayName
+            Value="產品敘述" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="prodEnDesc"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="120" />
+          <DisplayName
+            Value="產品英文敘述" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="prodType"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="32" />
+          <DisplayName
+            Value="產品規格型號" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="pWeight"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="16" />
+          <DisplayName
+            Value="產品重量" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="srcPartNo"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="30" />
+          <DisplayName
+            Value="原廠料號" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="prodSize"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="40" />
+          <DisplayName
+            Value="產品簡短備註" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="prodSCode"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="10" />
+          <DisplayName
+            Value="注音簡碼" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="bUnitID"
+        PropertyType=":Int16?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <DisplayName
+            Value="基本單位" />
+          <SupportedValue
+            DisplayName="支"
+            Value="1" />
+          <SupportedValue
+            DisplayName="片"
+            Value="2" />
+          <SupportedValue
+            DisplayName="包"
+            Value="3" />
+          <SupportedValue
+            DisplayName="台"
+            Value="4" />
+          <SupportedValue
+            DisplayName="本"
+            Value="5" />
+          <SupportedValue
+            DisplayName="次"
+            Value="6" />
+          <SupportedValue
+            DisplayName="米"
+            Value="7" />
+          <SupportedValue
+            DisplayName="卷"
+            Value="8" />
+          <SupportedValue
+            DisplayName="個"
+            Value="9" />
+          <SupportedValue
+            DisplayName="根"
+            Value="10" />
+          <SupportedValue
+            DisplayName="條"
+            Value="11" />
+          <SupportedValue
+            DisplayName="瓶"
+            Value="12" />
+          <SupportedValue
+            DisplayName="盒"
+            Value="13" />
+          <SupportedValue
+            DisplayName="組"
+            Value="14" />
+          <SupportedValue
+            DisplayName="管"
+            Value="15" />
+          <SupportedValue
+            DisplayName="顆"
+            Value="16" />
+          <SupportedValue
+            DisplayName="罐"
+            Value="17" />
+          <SupportedValue
+            DisplayName="批"
+            Value="18" />
+          <SupportedValue
+            DisplayName="對"
+            Value="19" />
+          <SupportedValue
+            DisplayName="ITEM"
+            Value="20" />
+          <SupportedValue
+            DisplayName="套"
+            Value="21" />
+          <SupportedValue
+            DisplayName="捲"
+            Value="22" />
+          <SupportedValue
+            DisplayName="張"
+            Value="23" />
+          <SupportedValue
+            DisplayName="式"
+            Value="24" />
+          <SupportedValue
+            DisplayName="箱"
+            Value="25" />
+          <SupportedValue
+            DisplayName="灌"
+            Value="26" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="pUnitID"
+        PropertyType=":Int16?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <DisplayName
+            Value="包裝單位" />
+          <SupportedValue
+            DisplayName="2個/包"
+            Value="1" />
+          <SupportedValue
+            DisplayName="3個/包"
+            Value="2" />
+          <SupportedValue
+            DisplayName="4個/包"
+            Value="3" />
+          <SupportedValue
+            DisplayName="5個/包"
+            Value="4" />
+          <SupportedValue
+            DisplayName="10個/包"
+            Value="5" />
+          <SupportedValue
+            DisplayName="20個/包"
+            Value="6" />
+          <SupportedValue
+            DisplayName="50個/包"
+            Value="7" />
+          <SupportedValue
+            DisplayName="100個/包"
+            Value="8" />
+          <SupportedValue
+            DisplayName="200個/包"
+            Value="9" />
+          <SupportedValue
+            DisplayName="1米/包"
+            Value="10" />
+          <SupportedValue
+            DisplayName="10米/包"
+            Value="11" />
+          <SupportedValue
+            DisplayName="10顆/包"
+            Value="12" />
+          <SupportedValue
+            DisplayName="20顆/包"
+            Value="13" />
+          <SupportedValue
+            DisplayName="10張/包"
+            Value="14" />
+          <SupportedValue
+            DisplayName="15張/包"
+            Value="15" />
+          <SupportedValue
+            DisplayName="40顆/包"
+            Value="16" />
+          <SupportedValue
+            DisplayName="無"
+            Value="17" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="prodSeq"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            IsFixedLength="True"
+            Value="14" />
+          <DisplayName
+            Value="產品條碼" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="prodSellPrice"
+        PropertyType=":Double?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <DisplayName
+            Value="基本售價" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="pHighCost"
+        PropertyType=":Double?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <DisplayName
+            Value="最高進價" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="pLowCost"
+        PropertyType=":Double?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <DisplayName
+            Value="最低進價" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="pAvgCost"
+        PropertyType=":Double?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <DisplayName
+            Value="平均進價" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="pOrderQty"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <DisplayName
+            Value="被訂購量" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="pNowQty"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <DisplayName
+            Value="現有數量" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="pMemo"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength />
+          <DisplayName
+            Value="備註" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="pImg"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="70" />
+          <DisplayName
+            Value="產品照片位置" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="pStorageSpaces"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="25" />
+          <DisplayName
+            Value="儲位位置" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="pInDate"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Kind="Unspecified"
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+          <DisplayName
+            Value="最後進貨" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="pOutDate"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Kind="Unspecified"
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+          <DisplayName
+            Value="最後出貨" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="pBuildDate"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Kind="Unspecified"
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+          <DisplayName
+            Value="建檔日期" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="pTranDate"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Kind="Unspecified"
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+          <DisplayName
+            Value="異動日期" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="pClerk"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <DisplayName
+            Value="異動者" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Association="eorderitem_productCode"
+        FromEnd="productcode"
+        Name="eorderitem"
+        ToEnd="eorderitem" />
+      <NavigationProperty
+        Association="productcode_ppID"
+        FromEnd="productcode"
+        Name="productclassItem"
+        ToEnd="productclass" />
+      <NavigationProperty
+        Association="productcode_supID"
+        FromEnd="productcode"
+        Name="suppliercodeItem"
+        ToEnd="suppliercode" />
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="eorderitem_orderItem">
+    <AssociationEnd
+      EntityType="eorderItem"
+      Multiplicity="One"
+      Name="eorder">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Unset" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      EntityType="eorderitemItem"
+      Multiplicity="Many"
+      Name="eorderitem" />
+  </Association>
+  <Association
+    Name="eorderitem_productCode">
+    <AssociationEnd
+      EntityType="productcodeItem"
+      Multiplicity="One"
+      Name="productcode">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Unset" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      EntityType="eorderitemItem"
+      Multiplicity="Many"
+      Name="eorderitem" />
+  </Association>
+  <Association
+    Name="productcode_ppID">
+    <AssociationEnd
+      EntityType="productclassItem"
+      Name="productclass">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Unset" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      EntityType="productcodeItem"
+      Multiplicity="Many"
+      Name="productcode" />
+  </Association>
+  <Association
+    Name="FK_eorder_customercode">
+    <AssociationEnd
+      EntityType="customercodeItem"
+      Name="customercode">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Unset" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      EntityType="eorderItem"
+      Multiplicity="Many"
+      Name="eorder" />
+  </Association>
+  <EntityType
+    Name="employeecodeItem">
+    <EntityType.Attributes>
+      <SummaryProperty
+        Property="employeecodeItem/Properties[empID]" />
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        IsReadOnly="True"
+        Name="empID"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="empAcc"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="10" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="empsellStoreID"
+        PropertyType=":Int16?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="empCode"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            IsFixedLength="True"
+            Value="1" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="empPws"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="10" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="empName"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="10" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="empTel"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="15" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="empMobile"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="15" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="empAdd"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="50" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="empDepar"
+        PropertyType=":Int16?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="isAdmin"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            IsFixedLength="True"
+            Value="1" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="empEmail"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="45" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="invtitlecodeItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        IsReadOnly="True"
+        Name="invTitleCode"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="invCode"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            IsFixedLength="True"
+            Value="8" />
+          <DisplayName
+            Value="統編" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="invTitleDesc"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="50" />
+          <DisplayName
+            Value="抬頭" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Association="FK_invtitlecode_customercode"
+        FromEnd="invtitlecode"
+        Name="customercodeItem1"
+        ToEnd="customercode" />
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="FK_invtitlecode_customercode">
+    <AssociationEnd
+      EntityType="customercodeItem"
+      Multiplicity="One"
+      Name="customercode">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Unset" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      EntityType="invtitlecodeItem"
+      Multiplicity="Many"
+      Name="invtitlecode" />
+  </Association>
+  <EntityType
+    Name="unitcodeItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        IsReadOnly="True"
+        Name="unitID"
+        PropertyType=":Int16">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="unitEnDesc"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="20" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="unitDesc"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="20" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="punitcodeItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        IsReadOnly="True"
+        Name="pUnitID"
+        PropertyType=":Int16">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="pUnitEnDesc"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="50" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="pUnitDesc"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="20" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="suppliercodeItem">
+    <EntityType.Attributes>
+      <SummaryProperty
+        Property="suppliercodeItem/Properties[supName]" />
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        IsReadOnly="True"
+        Name="supID"
+        PropertyType=":Int64">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="supAcc"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="6" />
+          <DisplayName
+            Value="供應商帳號" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="simpleSup"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="12" />
+          <DisplayName
+            Value="供應商簡稱" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="supCode"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="6" />
+          <DisplayName
+            Value="供應商簡碼" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="supName"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="40" />
+          <DisplayName
+            Value="供應商名稱" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="supTax"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="8" />
+          <DisplayName
+            Value="統一編號" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="contactName1"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="30" />
+          <DisplayName
+            Value="聯絡人1" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="contactMobile1"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="15" />
+          <DisplayName
+            Value="聯絡人1手機" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="contactName2"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="10" />
+          <DisplayName
+            Value="聯絡人2" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="contactMobile2"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="15" />
+          <DisplayName
+            Value="聯絡人2手機" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="contactName3"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="10" />
+          <DisplayName
+            Value="聯絡人3" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="contactMobile3"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="15" />
+          <DisplayName
+            Value="聯絡人3手機" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="supTel"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="20" />
+          <DisplayName
+            Value="供應商電話" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="supFax"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="20" />
+          <DisplayName
+            Value="供應商傳真" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="supAdd"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="50" />
+          <DisplayName
+            Value="供應商住址" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="supMail"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="50" />
+          <DisplayName
+            Value="供應商Email" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="supMomo"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="200" />
+          <DisplayName
+            Value="備註" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="inDate"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Kind="Unspecified"
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+          <DisplayName
+            Value="建檔日期" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="lastInDate"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Kind="Unspecified"
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+          <DisplayName
+            Value="最後進貨日期" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="sClerk"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <DisplayName
+            Value="sClerk" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Association="productcode_supID"
+        FromEnd="suppliercode"
+        Name="productcode"
+        ToEnd="productcode" />
+      <NavigationProperty
+        Association="suppliercode_suppliercode_ibfk_1"
+        FromEnd="suppliercode"
+        Name="paywaycodeItem"
+        ToEnd="paywaycode">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="請款方式" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="productcode_supID">
+    <AssociationEnd
+      EntityType="suppliercodeItem"
+      Name="suppliercode">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Unset" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      EntityType="productcodeItem"
+      Multiplicity="Many"
+      Name="productcode" />
+  </Association>
+  <EntityType
+    Name="paywaycodeItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        IsReadOnly="True"
+        Name="payID"
+        PropertyType=":Int16">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="payDesc"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="20" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Association="suppliercode_suppliercode_ibfk_1"
+        FromEnd="paywaycode"
+        Name="suppliercode"
+        ToEnd="suppliercode" />
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="suppliercode_suppliercode_ibfk_1">
+    <AssociationEnd
+      EntityType="paywaycodeItem"
+      Name="paywaycode">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Unset" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      EntityType="suppliercodeItem"
+      Multiplicity="Many"
+      Name="suppliercode" />
+  </Association>
+</ModelFragment>

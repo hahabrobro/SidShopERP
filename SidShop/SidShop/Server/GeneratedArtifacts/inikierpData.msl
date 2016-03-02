@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping CdmEntityContainer="inikierpDataObjectContext" StorageEntityContainer="inikierpDataStore">
+    <EntitySetMapping Name="cuskindcode">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.cuskindcodeItem)">
+        <MappingFragment StoreEntitySet="cuskindcode">
+          <ScalarProperty Name="cuskindID" ColumnName="cuskindID" />
+          <ScalarProperty Name="cusAcc" ColumnName="cusAcc" />
+          <ScalarProperty Name="cusDesc" ColumnName="cusDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customercode">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.customercodeItem)">
+        <MappingFragment StoreEntitySet="customercode">
+          <ScalarProperty Name="cusID" ColumnName="cusID" />
+          <ScalarProperty Name="cusAcc" ColumnName="cusAcc" />
+          <ScalarProperty Name="cusKind" ColumnName="cusKind" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="simpleComany" ColumnName="simpleComany" />
+          <ScalarProperty Name="cusName" ColumnName="cusName" />
+          <ScalarProperty Name="cusPws" ColumnName="cusPws" />
+          <ScalarProperty Name="companyName" ColumnName="companyName" />
+          <ScalarProperty Name="contactName" ColumnName="contactName" />
+          <ScalarProperty Name="tax" ColumnName="tax" />
+          <ScalarProperty Name="zip" ColumnName="zip" />
+          <ScalarProperty Name="companyAddress" ColumnName="companyAddress" />
+          <ScalarProperty Name="sendAddress" ColumnName="sendAddress" />
+          <ScalarProperty Name="taxAddress" ColumnName="taxAddress" />
+          <ScalarProperty Name="cusEmail" ColumnName="cusEmail" />
+          <ScalarProperty Name="payID" ColumnName="payID" />
+          <ScalarProperty Name="invTitleCode" ColumnName="invTitleCode" />
+          <ScalarProperty Name="contactMobile" ColumnName="contactMobile" />
+          <ScalarProperty Name="buildDate" ColumnName="buildDate" />
+          <ScalarProperty Name="cusMemo" ColumnName="cusMemo" />
+          <ScalarProperty Name="cClerk" ColumnName="cClerk" />
+          <ScalarProperty Name="rutenId" ColumnName="rutenId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sendrecord">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.sendrecordItem)">
+        <MappingFragment StoreEntitySet="sendrecord">
+          <ScalarProperty Name="sendRecordID" ColumnName="sendRecordID" />
+          <ScalarProperty Name="CorpID" ColumnName="CorpID" />
+          <ScalarProperty Name="sendDate" ColumnName="sendDate" />
+          <ScalarProperty Name="money" ColumnName="money" />
+          <ScalarProperty Name="sendNum" ColumnName="sendNum" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="sendTypeID" ColumnName="sendTypeID" />
+          <ScalarProperty Name="odID" ColumnName="odID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="eorder">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.eorderItem)">
+        <MappingFragment StoreEntitySet="eorder">
+          <ScalarProperty Name="odID" ColumnName="odID" />
+          <ScalarProperty Name="orderNo" ColumnName="orderNo" />
+          <ScalarProperty Name="storeNumber" ColumnName="storeNumber" />
+          <ScalarProperty Name="storeID" ColumnName="storeID" />
+          <ScalarProperty Name="langID" ColumnName="langID" />
+          <ScalarProperty Name="payID" ColumnName="payID" />
+          <ScalarProperty Name="invNo" ColumnName="invNo" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="tax" ColumnName="tax" />
+          <ScalarProperty Name="noTax" ColumnName="noTax" />
+          <ScalarProperty Name="sendID" ColumnName="sendID" />
+          <ScalarProperty Name="eoClerk" ColumnName="eoClerk" />
+          <ScalarProperty Name="curID" ColumnName="curID" />
+          <ScalarProperty Name="eoDate" ColumnName="eoDate" />
+          <ScalarProperty Name="isTax" ColumnName="isTax" />
+          <ScalarProperty Name="invTitleCode" ColumnName="invTitleCode" />
+          <ScalarProperty Name="isMerger" ColumnName="isMerger" />
+          <ScalarProperty Name="isClose" ColumnName="isClose" />
+          <ScalarProperty Name="isPayment" ColumnName="isPayment" />
+          <ScalarProperty Name="eStatusID" ColumnName="eStatusID" />
+          <ScalarProperty Name="payment_no" ColumnName="payment_no" />
+          <ScalarProperty Name="eoMemo" ColumnName="eoMemo" />
+          <ScalarProperty Name="companyMemo" ColumnName="companyMemo" />
+          <ScalarProperty Name="shipment" ColumnName="shipment" />
+          <ScalarProperty Name="cusID" ColumnName="cusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sendtype">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.sendtypeItem)">
+        <MappingFragment StoreEntitySet="sendtype">
+          <ScalarProperty Name="sendTypeID" ColumnName="sendTypeID" />
+          <ScalarProperty Name="sendTypeName" ColumnName="sendTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="eorderitem">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.eorderitemItem)">
+        <MappingFragment StoreEntitySet="eorderitem">
+          <ScalarProperty Name="odItemID" ColumnName="odItemID" />
+          <ScalarProperty Name="invi" ColumnName="invi" />
+          <ScalarProperty Name="disCount" ColumnName="disCount" />
+          <ScalarProperty Name="qty" ColumnName="qty" />
+          <ScalarProperty Name="iunitDesc" ColumnName="iunitDesc" />
+          <ScalarProperty Name="unitPrice" ColumnName="unitPrice" />
+          <ScalarProperty Name="isValue" ColumnName="isValue" />
+          <ScalarProperty Name="oldItemPrID" ColumnName="oldItemPrID" />
+          <ScalarProperty Name="deliveryDate" ColumnName="deliveryDate" />
+          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="odID" ColumnName="odID" />
+          <ScalarProperty Name="prodID" ColumnName="prodID" />
+          <ScalarProperty Name="isPrint" ColumnName="isPrint" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="eorderstatuscode">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.eorderstatuscodeItem)">
+        <MappingFragment StoreEntitySet="eorderstatuscode">
+          <ScalarProperty Name="eStatusID" ColumnName="eStatusID" />
+          <ScalarProperty Name="esDesc" ColumnName="esDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="productclass">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.productclassItem)">
+        <MappingFragment StoreEntitySet="productclass">
+          <ScalarProperty Name="ppID" ColumnName="ppID" />
+          <ScalarProperty Name="ppNum" ColumnName="ppNum" />
+          <ScalarProperty Name="ppName" ColumnName="ppName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="productcode">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.productcodeItem)">
+        <MappingFragment StoreEntitySet="productcode">
+          <ScalarProperty Name="prodID" ColumnName="prodID" />
+          <ScalarProperty Name="prodAcc" ColumnName="prodAcc" />
+          <ScalarProperty Name="prodDesc" ColumnName="prodDesc" />
+          <ScalarProperty Name="prodEnDesc" ColumnName="prodEnDesc" />
+          <ScalarProperty Name="prodType" ColumnName="prodType" />
+          <ScalarProperty Name="pWeight" ColumnName="pWeight" />
+          <ScalarProperty Name="srcPartNo" ColumnName="srcPartNo" />
+          <ScalarProperty Name="prodSize" ColumnName="prodSize" />
+          <ScalarProperty Name="prodSCode" ColumnName="prodSCode" />
+          <ScalarProperty Name="bUnitID" ColumnName="bUnitID" />
+          <ScalarProperty Name="pUnitID" ColumnName="pUnitID" />
+          <ScalarProperty Name="prodSeq" ColumnName="prodSeq" />
+          <ScalarProperty Name="prodSellPrice" ColumnName="prodSellPrice" />
+          <ScalarProperty Name="pHighCost" ColumnName="pHighCost" />
+          <ScalarProperty Name="pLowCost" ColumnName="pLowCost" />
+          <ScalarProperty Name="pAvgCost" ColumnName="pAvgCost" />
+          <ScalarProperty Name="pOrderQty" ColumnName="pOrderQty" />
+          <ScalarProperty Name="pNowQty" ColumnName="pNowQty" />
+          <ScalarProperty Name="pMemo" ColumnName="pMemo" />
+          <ScalarProperty Name="pImg" ColumnName="pImg" />
+          <ScalarProperty Name="pStorageSpaces" ColumnName="pStorageSpaces" />
+          <ScalarProperty Name="pInDate" ColumnName="pInDate" />
+          <ScalarProperty Name="pOutDate" ColumnName="pOutDate" />
+          <ScalarProperty Name="pBuildDate" ColumnName="pBuildDate" />
+          <ScalarProperty Name="pTranDate" ColumnName="pTranDate" />
+          <ScalarProperty Name="pClerk" ColumnName="pClerk" />
+          <ScalarProperty Name="ppID" ColumnName="ppID" />
+          <ScalarProperty Name="supID" ColumnName="supID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="employeecode">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.employeecodeItem)">
+        <MappingFragment StoreEntitySet="employeecode">
+          <ScalarProperty Name="empID" ColumnName="empID" />
+          <ScalarProperty Name="empAcc" ColumnName="empAcc" />
+          <ScalarProperty Name="empsellStoreID" ColumnName="empsellStoreID" />
+          <ScalarProperty Name="empCode" ColumnName="empCode" />
+          <ScalarProperty Name="empPws" ColumnName="empPws" />
+          <ScalarProperty Name="empName" ColumnName="empName" />
+          <ScalarProperty Name="empTel" ColumnName="empTel" />
+          <ScalarProperty Name="empMobile" ColumnName="empMobile" />
+          <ScalarProperty Name="empAdd" ColumnName="empAdd" />
+          <ScalarProperty Name="empDepar" ColumnName="empDepar" />
+          <ScalarProperty Name="isAdmin" ColumnName="isAdmin" />
+          <ScalarProperty Name="empEmail" ColumnName="empEmail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="invtitlecode">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.invtitlecodeItem)">
+        <MappingFragment StoreEntitySet="invtitlecode">
+          <ScalarProperty Name="invTitleCode" ColumnName="invTitleCode" />
+          <ScalarProperty Name="invCode" ColumnName="invCode" />
+          <ScalarProperty Name="invTitleDesc" ColumnName="invTitleDesc" />
+          <ScalarProperty Name="cusID" ColumnName="cusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="unitcode">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.unitcodeItem)">
+        <MappingFragment StoreEntitySet="unitcode">
+          <ScalarProperty Name="unitID" ColumnName="unitID" />
+          <ScalarProperty Name="unitEnDesc" ColumnName="unitEnDesc" />
+          <ScalarProperty Name="unitDesc" ColumnName="unitDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="punitcode">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.punitcodeItem)">
+        <MappingFragment StoreEntitySet="punitcode">
+          <ScalarProperty Name="pUnitID" ColumnName="pUnitID" />
+          <ScalarProperty Name="pUnitEnDesc" ColumnName="pUnitEnDesc" />
+          <ScalarProperty Name="pUnitDesc" ColumnName="pUnitDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="suppliercode">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.suppliercodeItem)">
+        <MappingFragment StoreEntitySet="suppliercode">
+          <ScalarProperty Name="supID" ColumnName="supID" />
+          <ScalarProperty Name="supAcc" ColumnName="supAcc" />
+          <ScalarProperty Name="simpleSup" ColumnName="simpleSup" />
+          <ScalarProperty Name="supCode" ColumnName="supCode" />
+          <ScalarProperty Name="supName" ColumnName="supName" />
+          <ScalarProperty Name="supTax" ColumnName="supTax" />
+          <ScalarProperty Name="contactName1" ColumnName="contactName1" />
+          <ScalarProperty Name="contactMobile1" ColumnName="contactMobile1" />
+          <ScalarProperty Name="contactName2" ColumnName="contactName2" />
+          <ScalarProperty Name="contactMobile2" ColumnName="contactMobile2" />
+          <ScalarProperty Name="contactName3" ColumnName="contactName3" />
+          <ScalarProperty Name="contactMobile3" ColumnName="contactMobile3" />
+          <ScalarProperty Name="supTel" ColumnName="supTel" />
+          <ScalarProperty Name="supFax" ColumnName="supFax" />
+          <ScalarProperty Name="supAdd" ColumnName="supAdd" />
+          <ScalarProperty Name="supMail" ColumnName="supMail" />
+          <ScalarProperty Name="supMomo" ColumnName="supMomo" />
+          <ScalarProperty Name="inDate" ColumnName="inDate" />
+          <ScalarProperty Name="lastInDate" ColumnName="lastInDate" />
+          <ScalarProperty Name="sClerk" ColumnName="sClerk" />
+          <ScalarProperty Name="supPayID" ColumnName="supPayID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="paywaycode">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.paywaycodeItem)">
+        <MappingFragment StoreEntitySet="paywaycode">
+          <ScalarProperty Name="payID" ColumnName="payID" />
+          <ScalarProperty Name="payDesc" ColumnName="payDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

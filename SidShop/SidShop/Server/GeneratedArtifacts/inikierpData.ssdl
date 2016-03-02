@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="inikierpDataStore" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="inikierpDataStore">
+    <EntitySet Name="cuskindcode" EntityType="inikierpDataStore.cuskindcodeItem" store:Type="Tables" Schema="dbo" Table="cuskindcode" />
+    <EntitySet Name="customercode" EntityType="inikierpDataStore.customercodeItem" store:Type="Tables" Schema="dbo" Table="customercode" />
+    <EntitySet Name="sendrecord" EntityType="inikierpDataStore.sendrecordItem" store:Type="Tables" Schema="dbo" Table="sendrecord" />
+    <EntitySet Name="eorder" EntityType="inikierpDataStore.eorderItem" store:Type="Tables" Schema="dbo" Table="eorder" />
+    <EntitySet Name="sendtype" EntityType="inikierpDataStore.sendtypeItem" store:Type="Tables" Schema="dbo" Table="sendtype" />
+    <EntitySet Name="eorderitem" EntityType="inikierpDataStore.eorderitemItem" store:Type="Tables" Schema="dbo" Table="eorderitem" />
+    <EntitySet Name="eorderstatuscode" EntityType="inikierpDataStore.eorderstatuscodeItem" store:Type="Tables" Schema="dbo" Table="eorderstatuscode" />
+    <EntitySet Name="productclass" EntityType="inikierpDataStore.productclassItem" store:Type="Tables" Schema="dbo" Table="productclass" />
+    <EntitySet Name="productcode" EntityType="inikierpDataStore.productcodeItem" store:Type="Tables" Schema="dbo" Table="productcode" />
+    <EntitySet Name="employeecode" EntityType="inikierpDataStore.employeecodeItem" store:Type="Tables" Schema="dbo" Table="employeecode" />
+    <EntitySet Name="invtitlecode" EntityType="inikierpDataStore.invtitlecodeItem" store:Type="Tables" Schema="dbo" Table="invtitlecode" />
+    <EntitySet Name="unitcode" EntityType="inikierpDataStore.unitcodeItem" store:Type="Tables" Schema="dbo" Table="unitcode" />
+    <EntitySet Name="punitcode" EntityType="inikierpDataStore.punitcodeItem" store:Type="Tables" Schema="dbo" Table="punitcode" />
+    <EntitySet Name="suppliercode" EntityType="inikierpDataStore.suppliercodeItem" store:Type="Tables" Schema="dbo" Table="suppliercode" />
+    <EntitySet Name="paywaycode" EntityType="inikierpDataStore.paywaycodeItem" store:Type="Tables" Schema="dbo" Table="paywaycode" />
+    <AssociationSet Name="sendrecord_sendrecord_ibfk_1" Association="inikierpDataStore.sendrecord_sendrecord_ibfk_1">
+      <End Role="sendtype" EntitySet="sendtype" />
+      <End Role="sendrecord" EntitySet="sendrecord" />
+    </AssociationSet>
+    <AssociationSet Name="eorderitem_orderItem" Association="inikierpDataStore.eorderitem_orderItem">
+      <End Role="eorder" EntitySet="eorder" />
+      <End Role="eorderitem" EntitySet="eorderitem" />
+    </AssociationSet>
+    <AssociationSet Name="eorderitem_productCode" Association="inikierpDataStore.eorderitem_productCode">
+      <End Role="productcode" EntitySet="productcode" />
+      <End Role="eorderitem" EntitySet="eorderitem" />
+    </AssociationSet>
+    <AssociationSet Name="productcode_ppID" Association="inikierpDataStore.productcode_ppID">
+      <End Role="productclass" EntitySet="productclass" />
+      <End Role="productcode" EntitySet="productcode" />
+    </AssociationSet>
+    <AssociationSet Name="FK_eorder_customercode" Association="inikierpDataStore.FK_eorder_customercode">
+      <End Role="customercode" EntitySet="customercode" />
+      <End Role="eorder" EntitySet="eorder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_invtitlecode_customercode" Association="inikierpDataStore.FK_invtitlecode_customercode">
+      <End Role="customercode" EntitySet="customercode" />
+      <End Role="invtitlecode" EntitySet="invtitlecode" />
+    </AssociationSet>
+    <AssociationSet Name="productcode_supID" Association="inikierpDataStore.productcode_supID">
+      <End Role="suppliercode" EntitySet="suppliercode" />
+      <End Role="productcode" EntitySet="productcode" />
+    </AssociationSet>
+    <AssociationSet Name="suppliercode_suppliercode_ibfk_1" Association="inikierpDataStore.suppliercode_suppliercode_ibfk_1">
+      <End Role="paywaycode" EntitySet="paywaycode" />
+      <End Role="suppliercode" EntitySet="suppliercode" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="cuskindcodeItem">
+    <Key>
+      <PropertyRef Name="cuskindID" />
+    </Key>
+    <Property Name="cuskindID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="cusAcc" Type="nchar" Nullable="false" MaxLength="1" />
+    <Property Name="cusDesc" Type="nvarchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="customercodeItem">
+    <Key>
+      <PropertyRef Name="cusID" />
+    </Key>
+    <Property Name="cusID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="cusAcc" Type="nchar" MaxLength="9" />
+    <Property Name="cusKind" Type="smallint" />
+    <Property Name="tel" Type="nvarchar" MaxLength="20" />
+    <Property Name="simpleComany" Type="nvarchar" MaxLength="30" />
+    <Property Name="cusName" Type="nvarchar" MaxLength="20" />
+    <Property Name="cusPws" Type="nvarchar" MaxLength="10" />
+    <Property Name="companyName" Type="nvarchar" MaxLength="50" />
+    <Property Name="contactName" Type="nvarchar" MaxLength="20" />
+    <Property Name="tax" Type="nchar" MaxLength="8" />
+    <Property Name="zip" Type="nvarchar" MaxLength="5" />
+    <Property Name="companyAddress" Type="nvarchar" MaxLength="70" />
+    <Property Name="sendAddress" Type="nvarchar" MaxLength="100" />
+    <Property Name="taxAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="cusEmail" Type="nvarchar" MaxLength="40" />
+    <Property Name="payID" Type="smallint" />
+    <Property Name="invTitleCode" Type="smallint" />
+    <Property Name="contactMobile" Type="nvarchar" MaxLength="25" />
+    <Property Name="buildDate" Type="date" />
+    <Property Name="cusMemo" Type="nvarchar(max)" />
+    <Property Name="cClerk" Type="int" />
+    <Property Name="rutenId" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="sendrecordItem">
+    <Key>
+      <PropertyRef Name="sendRecordID" />
+    </Key>
+    <Property Name="sendRecordID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CorpID" Type="smallint" />
+    <Property Name="sendDate" Type="date" />
+    <Property Name="money" Type="real" />
+    <Property Name="sendNum" Type="nvarchar" MaxLength="30" />
+    <Property Name="weight" Type="decimal" Precision="10" />
+    <Property Name="note" Type="nvarchar" MaxLength="30" />
+    <Property Name="odID" Type="bigint" Nullable="false" />
+    <Property Name="sendTypeID" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="eorderItem">
+    <Key>
+      <PropertyRef Name="odID" />
+    </Key>
+    <Property Name="odID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="orderNo" Type="nvarchar" MaxLength="16" />
+    <Property Name="storeNumber" Type="nvarchar" MaxLength="30" />
+    <Property Name="storeID" Type="smallint" />
+    <Property Name="langID" Type="smallint" />
+    <Property Name="payID" Type="smallint" />
+    <Property Name="invNo" Type="nvarchar" MaxLength="10" />
+    <Property Name="total" Type="float" />
+    <Property Name="tax" Type="numeric" Precision="8" />
+    <Property Name="noTax" Type="float" />
+    <Property Name="sendID" Type="smallint" />
+    <Property Name="eoClerk" Type="int" Nullable="false" />
+    <Property Name="curID" Type="smallint" />
+    <Property Name="eoDate" Type="date" />
+    <Property Name="isTax" Type="nchar" MaxLength="1" />
+    <Property Name="invTitleCode" Type="int" />
+    <Property Name="isMerger" Type="nchar" MaxLength="1" />
+    <Property Name="isClose" Type="nchar" MaxLength="1" />
+    <Property Name="isPayment" Type="nchar" MaxLength="1" />
+    <Property Name="eStatusID" Type="int" />
+    <Property Name="payment_no" Type="nvarchar" MaxLength="30" />
+    <Property Name="eoMemo" Type="nvarchar(max)" />
+    <Property Name="companyMemo" Type="nvarchar(max)" />
+    <Property Name="shipment" Type="smallint" />
+    <Property Name="cusID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="sendtypeItem">
+    <Key>
+      <PropertyRef Name="sendTypeID" />
+    </Key>
+    <Property Name="sendTypeID" Type="smallint" Nullable="false" />
+    <Property Name="sendTypeName" Type="nvarchar" Nullable="false" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="eorderitemItem">
+    <Key>
+      <PropertyRef Name="odItemID" />
+    </Key>
+    <Property Name="odItemID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="invi" Type="bigint" />
+    <Property Name="disCount" Type="nvarchar" MaxLength="3" />
+    <Property Name="qty" Type="float" />
+    <Property Name="iunitDesc" Type="nvarchar" MaxLength="10" />
+    <Property Name="unitPrice" Type="float" />
+    <Property Name="isValue" Type="nchar" MaxLength="1" />
+    <Property Name="oldItemPrID" Type="bigint" />
+    <Property Name="deliveryDate" Type="date" />
+    <Property Name="note" Type="nvarchar" MaxLength="30" />
+    <Property Name="isPrint" Type="bit" />
+    <Property Name="odID" Type="bigint" Nullable="false" />
+    <Property Name="prodID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="eorderstatuscodeItem">
+    <Key>
+      <PropertyRef Name="eStatusID" />
+    </Key>
+    <Property Name="eStatusID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="esDesc" Type="nvarchar" Nullable="false" MaxLength="40" />
+  </EntityType>
+  <EntityType Name="productclassItem">
+    <Key>
+      <PropertyRef Name="ppID" />
+    </Key>
+    <Property Name="ppID" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ppNum" Type="nvarchar" Nullable="false" MaxLength="5" />
+    <Property Name="ppName" Type="nvarchar" Nullable="false" MaxLength="70" />
+  </EntityType>
+  <EntityType Name="productcodeItem">
+    <Key>
+      <PropertyRef Name="prodID" />
+    </Key>
+    <Property Name="prodID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="prodAcc" Type="nvarchar" Nullable="false" MaxLength="12" />
+    <Property Name="prodDesc" Type="nvarchar" Nullable="false" MaxLength="60" />
+    <Property Name="prodEnDesc" Type="nvarchar" MaxLength="120" />
+    <Property Name="prodType" Type="nvarchar" MaxLength="32" />
+    <Property Name="pWeight" Type="nvarchar" MaxLength="16" />
+    <Property Name="srcPartNo" Type="nvarchar" MaxLength="30" />
+    <Property Name="prodSize" Type="nvarchar" MaxLength="40" />
+    <Property Name="prodSCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="bUnitID" Type="smallint" />
+    <Property Name="pUnitID" Type="smallint" />
+    <Property Name="prodSeq" Type="nchar" MaxLength="14" />
+    <Property Name="prodSellPrice" Type="float" />
+    <Property Name="pHighCost" Type="float" />
+    <Property Name="pLowCost" Type="float" />
+    <Property Name="pAvgCost" Type="float" />
+    <Property Name="pOrderQty" Type="int" />
+    <Property Name="pNowQty" Type="int" />
+    <Property Name="pMemo" Type="nvarchar(max)" />
+    <Property Name="pImg" Type="nvarchar" MaxLength="70" />
+    <Property Name="pStorageSpaces" Type="nvarchar" MaxLength="25" />
+    <Property Name="pInDate" Type="date" />
+    <Property Name="pOutDate" Type="date" />
+    <Property Name="pBuildDate" Type="date" />
+    <Property Name="pTranDate" Type="date" />
+    <Property Name="pClerk" Type="int" />
+    <Property Name="ppID" Type="smallint" />
+    <Property Name="supID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="employeecodeItem">
+    <Key>
+      <PropertyRef Name="empID" />
+    </Key>
+    <Property Name="empID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="empAcc" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="empsellStoreID" Type="smallint" />
+    <Property Name="empCode" Type="nchar" MaxLength="1" />
+    <Property Name="empPws" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="empName" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="empTel" Type="nvarchar" MaxLength="15" />
+    <Property Name="empMobile" Type="nvarchar" MaxLength="15" />
+    <Property Name="empAdd" Type="nvarchar" MaxLength="50" />
+    <Property Name="empDepar" Type="smallint" />
+    <Property Name="isAdmin" Type="nchar" MaxLength="1" />
+    <Property Name="empEmail" Type="nvarchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="invtitlecodeItem">
+    <Key>
+      <PropertyRef Name="invTitleCode" />
+    </Key>
+    <Property Name="invTitleCode" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="invCode" Type="nchar" MaxLength="8" />
+    <Property Name="invTitleDesc" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="cusID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="unitcodeItem">
+    <Key>
+      <PropertyRef Name="unitID" />
+    </Key>
+    <Property Name="unitID" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="unitEnDesc" Type="nvarchar" MaxLength="20" />
+    <Property Name="unitDesc" Type="nvarchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="punitcodeItem">
+    <Key>
+      <PropertyRef Name="pUnitID" />
+    </Key>
+    <Property Name="pUnitID" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="pUnitEnDesc" Type="nvarchar" MaxLength="50" />
+    <Property Name="pUnitDesc" Type="nvarchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="suppliercodeItem">
+    <Key>
+      <PropertyRef Name="supID" />
+    </Key>
+    <Property Name="supID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="supAcc" Type="nvarchar" Nullable="false" MaxLength="6" />
+    <Property Name="simpleSup" Type="nvarchar" MaxLength="12" />
+    <Property Name="supCode" Type="nvarchar" MaxLength="6" />
+    <Property Name="supName" Type="nvarchar" MaxLength="40" />
+    <Property Name="supTax" Type="nvarchar" Nullable="false" MaxLength="8" />
+    <Property Name="contactName1" Type="nvarchar" MaxLength="30" />
+    <Property Name="contactMobile1" Type="nvarchar" MaxLength="15" />
+    <Property Name="contactName2" Type="nvarchar" MaxLength="10" />
+    <Property Name="contactMobile2" Type="nvarchar" MaxLength="15" />
+    <Property Name="contactName3" Type="nvarchar" MaxLength="10" />
+    <Property Name="contactMobile3" Type="nvarchar" MaxLength="15" />
+    <Property Name="supTel" Type="nvarchar" MaxLength="20" />
+    <Property Name="supFax" Type="nvarchar" MaxLength="20" />
+    <Property Name="supAdd" Type="nvarchar" MaxLength="50" />
+    <Property Name="supMail" Type="nvarchar" MaxLength="50" />
+    <Property Name="supMomo" Type="nvarchar" MaxLength="200" />
+    <Property Name="inDate" Type="date" />
+    <Property Name="lastInDate" Type="date" />
+    <Property Name="sClerk" Type="int" />
+    <Property Name="supPayID" Type="smallint" />
+  </EntityType>
+  <EntityType Name="paywaycodeItem">
+    <Key>
+      <PropertyRef Name="payID" />
+    </Key>
+    <Property Name="payID" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="payDesc" Type="nvarchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <Association Name="sendrecord_sendrecord_ibfk_1">
+    <End Role="sendtype" Type="inikierpDataStore.sendtypeItem" Multiplicity="1" />
+    <End Role="sendrecord" Type="inikierpDataStore.sendrecordItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sendtype">
+        <PropertyRef Name="sendTypeID" />
+      </Principal>
+      <Dependent Role="sendrecord">
+        <PropertyRef Name="sendTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="eorderitem_orderItem">
+    <End Role="eorder" Type="inikierpDataStore.eorderItem" Multiplicity="1" />
+    <End Role="eorderitem" Type="inikierpDataStore.eorderitemItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="eorder">
+        <PropertyRef Name="odID" />
+      </Principal>
+      <Dependent Role="eorderitem">
+        <PropertyRef Name="odID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="eorderitem_productCode">
+    <End Role="productcode" Type="inikierpDataStore.productcodeItem" Multiplicity="1" />
+    <End Role="eorderitem" Type="inikierpDataStore.eorderitemItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productcode">
+        <PropertyRef Name="prodID" />
+      </Principal>
+      <Dependent Role="eorderitem">
+        <PropertyRef Name="prodID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="productcode_ppID">
+    <End Role="productclass" Type="inikierpDataStore.productclassItem" Multiplicity="0..1" />
+    <End Role="productcode" Type="inikierpDataStore.productcodeItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productclass">
+        <PropertyRef Name="ppID" />
+      </Principal>
+      <Dependent Role="productcode">
+        <PropertyRef Name="ppID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_eorder_customercode">
+    <End Role="customercode" Type="inikierpDataStore.customercodeItem" Multiplicity="0..1" />
+    <End Role="eorder" Type="inikierpDataStore.eorderItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customercode">
+        <PropertyRef Name="cusID" />
+      </Principal>
+      <Dependent Role="eorder">
+        <PropertyRef Name="cusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_invtitlecode_customercode">
+    <End Role="customercode" Type="inikierpDataStore.customercodeItem" Multiplicity="1" />
+    <End Role="invtitlecode" Type="inikierpDataStore.invtitlecodeItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customercode">
+        <PropertyRef Name="cusID" />
+      </Principal>
+      <Dependent Role="invtitlecode">
+        <PropertyRef Name="cusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="productcode_supID">
+    <End Role="suppliercode" Type="inikierpDataStore.suppliercodeItem" Multiplicity="0..1" />
+    <End Role="productcode" Type="inikierpDataStore.productcodeItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="suppliercode">
+        <PropertyRef Name="supID" />
+      </Principal>
+      <Dependent Role="productcode">
+        <PropertyRef Name="supID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="suppliercode_suppliercode_ibfk_1">
+    <End Role="paywaycode" Type="inikierpDataStore.paywaycodeItem" Multiplicity="0..1" />
+    <End Role="suppliercode" Type="inikierpDataStore.suppliercodeItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="paywaycode">
+        <PropertyRef Name="payID" />
+      </Principal>
+      <Dependent Role="suppliercode">
+        <PropertyRef Name="supPayID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

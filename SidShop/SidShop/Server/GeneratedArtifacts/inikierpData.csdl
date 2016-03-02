@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" Namespace="LightSwitchApplication" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="cuskindcodeItem">
+    <Key>
+      <PropertyRef Name="cuskindID" />
+    </Key>
+    <Property Name="cuskindID" Type="Edm.Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cusAcc" Type="Edm.String" Nullable="false" MaxLength="1" FixedLength="true" ConcurrencyMode="Fixed" />
+    <Property Name="cusDesc" Type="Edm.String" Nullable="false" MaxLength="20" ConcurrencyMode="Fixed" />
+  </EntityType>
+  <EntityType Name="customercodeItem">
+    <Key>
+      <PropertyRef Name="cusID" />
+    </Key>
+    <Property Name="cusID" Type="Edm.Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cusAcc" Type="Edm.String" MaxLength="9" FixedLength="true" ConcurrencyMode="Fixed" />
+    <Property Name="cusKind" Type="Edm.Int16" ConcurrencyMode="Fixed" />
+    <Property Name="tel" Type="Edm.String" MaxLength="20" ConcurrencyMode="Fixed" />
+    <Property Name="simpleComany" Type="Edm.String" MaxLength="30" ConcurrencyMode="Fixed" />
+    <Property Name="cusName" Type="Edm.String" MaxLength="20" ConcurrencyMode="Fixed" />
+    <Property Name="cusPws" Type="Edm.String" MaxLength="10" ConcurrencyMode="Fixed" />
+    <Property Name="companyName" Type="Edm.String" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="contactName" Type="Edm.String" MaxLength="20" ConcurrencyMode="Fixed" />
+    <Property Name="tax" Type="Edm.String" MaxLength="8" FixedLength="true" ConcurrencyMode="Fixed" />
+    <Property Name="zip" Type="Edm.String" MaxLength="5" ConcurrencyMode="Fixed" />
+    <Property Name="companyAddress" Type="Edm.String" MaxLength="70" ConcurrencyMode="Fixed" />
+    <Property Name="sendAddress" Type="Edm.String" MaxLength="100" ConcurrencyMode="Fixed" />
+    <Property Name="taxAddress" Type="Edm.String" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="cusEmail" Type="Edm.String" MaxLength="40" ConcurrencyMode="Fixed" />
+    <Property Name="payID" Type="Edm.Int16" ConcurrencyMode="Fixed" />
+    <Property Name="invTitleCode" Type="Edm.Int16" ConcurrencyMode="Fixed" />
+    <Property Name="contactMobile" Type="Edm.String" MaxLength="25" ConcurrencyMode="Fixed" />
+    <Property Name="buildDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="cusMemo" Type="Edm.String" MaxLength="Max" ConcurrencyMode="Fixed" />
+    <Property Name="cClerk" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="rutenId" Type="Edm.String" MaxLength="25" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="eorder" Relationship="LightSwitchApplication.FK_eorder_customercode" ToRole="eorder" FromRole="customercode" />
+    <NavigationProperty Name="invtitlecode1" Relationship="LightSwitchApplication.FK_invtitlecode_customercode" ToRole="invtitlecode" FromRole="customercode" />
+  </EntityType>
+  <EntityType Name="sendrecordItem">
+    <Key>
+      <PropertyRef Name="sendRecordID" />
+    </Key>
+    <Property Name="sendRecordID" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CorpID" Type="Edm.Int16" ConcurrencyMode="Fixed" />
+    <Property Name="sendDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="money" Type="Edm.Single" />
+    <Property Name="sendNum" Type="Edm.String" MaxLength="30" ConcurrencyMode="Fixed" />
+    <Property Name="weight" Type="Edm.Decimal" Precision="10" Scale="0" ConcurrencyMode="Fixed" />
+    <Property Name="note" Type="Edm.String" MaxLength="30" ConcurrencyMode="Fixed" />
+    <Property Name="odID" Type="Edm.Int64" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="sendTypeID" Type="Edm.Int16" Nullable="false" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="sendtypeItem" Relationship="LightSwitchApplication.sendrecord_sendrecord_ibfk_1" ToRole="sendtype" FromRole="sendrecord" />
+  </EntityType>
+  <EntityType Name="eorderItem">
+    <Key>
+      <PropertyRef Name="odID" />
+    </Key>
+    <Property Name="odID" Type="Edm.Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="orderNo" Type="Edm.String" MaxLength="16" ConcurrencyMode="Fixed" />
+    <Property Name="storeNumber" Type="Edm.String" MaxLength="30" ConcurrencyMode="Fixed" />
+    <Property Name="storeID" Type="Edm.Int16" ConcurrencyMode="Fixed" />
+    <Property Name="langID" Type="Edm.Int16" ConcurrencyMode="Fixed" />
+    <Property Name="payID" Type="Edm.Int16" ConcurrencyMode="Fixed" />
+    <Property Name="invNo" Type="Edm.String" MaxLength="10" ConcurrencyMode="Fixed" />
+    <Property Name="total" Type="Edm.Double" />
+    <Property Name="tax" Type="Edm.Decimal" Precision="8" Scale="0" ConcurrencyMode="Fixed" />
+    <Property Name="noTax" Type="Edm.Double" />
+    <Property Name="sendID" Type="Edm.Int16" ConcurrencyMode="Fixed" />
+    <Property Name="eoClerk" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="curID" Type="Edm.Int16" ConcurrencyMode="Fixed" />
+    <Property Name="eoDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="isTax" Type="Edm.String" MaxLength="1" FixedLength="true" ConcurrencyMode="Fixed" />
+    <Property Name="invTitleCode" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="isMerger" Type="Edm.String" MaxLength="1" FixedLength="true" ConcurrencyMode="Fixed" />
+    <Property Name="isClose" Type="Edm.String" MaxLength="1" FixedLength="true" ConcurrencyMode="Fixed" />
+    <Property Name="isPayment" Type="Edm.String" MaxLength="1" FixedLength="true" ConcurrencyMode="Fixed" />
+    <Property Name="eStatusID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="payment_no" Type="Edm.String" MaxLength="30" ConcurrencyMode="Fixed" />
+    <Property Name="eoMemo" Type="Edm.String" MaxLength="Max" ConcurrencyMode="Fixed" />
+    <Property Name="companyMemo" Type="Edm.String" MaxLength="Max" ConcurrencyMode="Fixed" />
+    <Property Name="shipment" Type="Edm.Int16" ConcurrencyMode="Fixed" />
+    <Property Name="cusID" Type="Edm.Int64" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="eorderitem1" Relationship="LightSwitchApplication.eorderitem_orderItem" ToRole="eorderitem" FromRole="eorder" />
+    <NavigationProperty Name="customercodeItem1" Relationship="LightSwitchApplication.FK_eorder_customercode" ToRole="customercode" FromRole="eorder" />
+  </EntityType>
+  <EntityType Name="sendtypeItem">
+    <Key>
+      <PropertyRef Name="sendTypeID" />
+    </Key>
+    <Property Name="sendTypeID" Type="Edm.Int16" Nullable="false" />
+    <Property Name="sendTypeName" Type="Edm.String" Nullable="false" MaxLength="30" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="sendrecord" Relationship="LightSwitchApplication.sendrecord_sendrecord_ibfk_1" ToRole="sendrecord" FromRole="sendtype" />
+  </EntityType>
+  <EntityType Name="eorderitemItem">
+    <Key>
+      <PropertyRef Name="odItemID" />
+    </Key>
+    <Property Name="odItemID" Type="Edm.Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="invi" Type="Edm.Int64" ConcurrencyMode="Fixed" />
+    <Property Name="disCount" Type="Edm.String" MaxLength="3" ConcurrencyMode="Fixed" />
+    <Property Name="qty" Type="Edm.Double" />
+    <Property Name="iunitDesc" Type="Edm.String" MaxLength="10" ConcurrencyMode="Fixed" />
+    <Property Name="unitPrice" Type="Edm.Double" />
+    <Property Name="isValue" Type="Edm.String" MaxLength="1" FixedLength="true" ConcurrencyMode="Fixed" />
+    <Property Name="oldItemPrID" Type="Edm.Int64" ConcurrencyMode="Fixed" />
+    <Property Name="deliveryDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="note" Type="Edm.String" MaxLength="30" ConcurrencyMode="Fixed" />
+    <Property Name="isPrint" Type="Edm.Boolean" ConcurrencyMode="Fixed" />
+    <Property Name="odID" Type="Edm.Int64" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="prodID" Type="Edm.Int64" Nullable="false" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="eorderItem1" Relationship="LightSwitchApplication.eorderitem_orderItem" ToRole="eorder" FromRole="eorderitem" />
+    <NavigationProperty Name="productcodeItem" Relationship="LightSwitchApplication.eorderitem_productCode" ToRole="productcode" FromRole="eorderitem" />
+  </EntityType>
+  <EntityType Name="eorderstatuscodeItem">
+    <Key>
+      <PropertyRef Name="eStatusID" />
+    </Key>
+    <Property Name="eStatusID" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="esDesc" Type="Edm.String" Nullable="false" MaxLength="40" ConcurrencyMode="Fixed" />
+  </EntityType>
+  <EntityType Name="productclassItem">
+    <Key>
+      <PropertyRef Name="ppID" />
+    </Key>
+    <Property Name="ppID" Type="Edm.Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ppNum" Type="Edm.String" Nullable="false" MaxLength="5" ConcurrencyMode="Fixed" />
+    <Property Name="ppName" Type="Edm.String" Nullable="false" MaxLength="70" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="productcode" Relationship="LightSwitchApplication.productcode_ppID" ToRole="productcode" FromRole="productclass" />
+  </EntityType>
+  <EntityType Name="productcodeItem">
+    <Key>
+      <PropertyRef Name="prodID" />
+    </Key>
+    <Property Name="prodID" Type="Edm.Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="prodAcc" Type="Edm.String" Nullable="false" MaxLength="12" ConcurrencyMode="Fixed" />
+    <Property Name="prodDesc" Type="Edm.String" Nullable="false" MaxLength="60" ConcurrencyMode="Fixed" />
+    <Property Name="prodEnDesc" Type="Edm.String" MaxLength="120" ConcurrencyMode="Fixed" />
+    <Property Name="prodType" Type="Edm.String" MaxLength="32" ConcurrencyMode="Fixed" />
+    <Property Name="pWeight" Type="Edm.String" MaxLength="16" ConcurrencyMode="Fixed" />
+    <Property Name="srcPartNo" Type="Edm.String" MaxLength="30" ConcurrencyMode="Fixed" />
+    <Property Name="prodSize" Type="Edm.String" MaxLength="40" ConcurrencyMode="Fixed" />
+    <Property Name="prodSCode" Type="Edm.String" MaxLength="10" ConcurrencyMode="Fixed" />
+    <Property Name="bUnitID" Type="Edm.Int16" ConcurrencyMode="Fixed" />
+    <Property Name="pUnitID" Type="Edm.Int16" ConcurrencyMode="Fixed" />
+    <Property Name="prodSeq" Type="Edm.String" MaxLength="14" FixedLength="true" ConcurrencyMode="Fixed" />
+    <Property Name="prodSellPrice" Type="Edm.Double" />
+    <Property Name="pHighCost" Type="Edm.Double" />
+    <Property Name="pLowCost" Type="Edm.Double" />
+    <Property Name="pAvgCost" Type="Edm.Double" />
+    <Property Name="pOrderQty" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="pNowQty" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="pMemo" Type="Edm.String" MaxLength="Max" ConcurrencyMode="Fixed" />
+    <Property Name="pImg" Type="Edm.String" MaxLength="70" ConcurrencyMode="Fixed" />
+    <Property Name="pStorageSpaces" Type="Edm.String" MaxLength="25" ConcurrencyMode="Fixed" />
+    <Property Name="pInDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="pOutDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="pBuildDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="pTranDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="pClerk" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="ppID" Type="Edm.Int16" ConcurrencyMode="Fixed" />
+    <Property Name="supID" Type="Edm.Int64" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="eorderitem" Relationship="LightSwitchApplication.eorderitem_productCode" ToRole="eorderitem" FromRole="productcode" />
+    <NavigationProperty Name="productclassItem" Relationship="LightSwitchApplication.productcode_ppID" ToRole="productclass" FromRole="productcode" />
+    <NavigationProperty Name="suppliercodeItem" Relationship="LightSwitchApplication.productcode_supID" ToRole="suppliercode" FromRole="productcode" />
+  </EntityType>
+  <EntityType Name="employeecodeItem">
+    <Key>
+      <PropertyRef Name="empID" />
+    </Key>
+    <Property Name="empID" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="empAcc" Type="Edm.String" Nullable="false" MaxLength="10" ConcurrencyMode="Fixed" />
+    <Property Name="empsellStoreID" Type="Edm.Int16" ConcurrencyMode="Fixed" />
+    <Property Name="empCode" Type="Edm.String" MaxLength="1" FixedLength="true" ConcurrencyMode="Fixed" />
+    <Property Name="empPws" Type="Edm.String" Nullable="false" MaxLength="10" ConcurrencyMode="Fixed" />
+    <Property Name="empName" Type="Edm.String" Nullable="false" MaxLength="10" ConcurrencyMode="Fixed" />
+    <Property Name="empTel" Type="Edm.String" MaxLength="15" ConcurrencyMode="Fixed" />
+    <Property Name="empMobile" Type="Edm.String" MaxLength="15" ConcurrencyMode="Fixed" />
+    <Property Name="empAdd" Type="Edm.String" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="empDepar" Type="Edm.Int16" ConcurrencyMode="Fixed" />
+    <Property Name="isAdmin" Type="Edm.String" MaxLength="1" FixedLength="true" ConcurrencyMode="Fixed" />
+    <Property Name="empEmail" Type="Edm.String" MaxLength="45" ConcurrencyMode="Fixed" />
+  </EntityType>
+  <EntityType Name="invtitlecodeItem">
+    <Key>
+      <PropertyRef Name="invTitleCode" />
+    </Key>
+    <Property Name="invTitleCode" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="invCode" Type="Edm.String" MaxLength="8" FixedLength="true" ConcurrencyMode="Fixed" />
+    <Property Name="invTitleDesc" Type="Edm.String" Nullable="false" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="cusID" Type="Edm.Int64" Nullable="false" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="customercodeItem1" Relationship="LightSwitchApplication.FK_invtitlecode_customercode" ToRole="customercode" FromRole="invtitlecode" />
+  </EntityType>
+  <EntityType Name="unitcodeItem">
+    <Key>
+      <PropertyRef Name="unitID" />
+    </Key>
+    <Property Name="unitID" Type="Edm.Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="unitEnDesc" Type="Edm.String" MaxLength="20" ConcurrencyMode="Fixed" />
+    <Property Name="unitDesc" Type="Edm.String" Nullable="false" MaxLength="20" ConcurrencyMode="Fixed" />
+  </EntityType>
+  <EntityType Name="punitcodeItem">
+    <Key>
+      <PropertyRef Name="pUnitID" />
+    </Key>
+    <Property Name="pUnitID" Type="Edm.Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pUnitEnDesc" Type="Edm.String" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="pUnitDesc" Type="Edm.String" Nullable="false" MaxLength="20" ConcurrencyMode="Fixed" />
+  </EntityType>
+  <EntityType Name="suppliercodeItem">
+    <Key>
+      <PropertyRef Name="supID" />
+    </Key>
+    <Property Name="supID" Type="Edm.Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="supAcc" Type="Edm.String" Nullable="false" MaxLength="6" ConcurrencyMode="Fixed" />
+    <Property Name="simpleSup" Type="Edm.String" MaxLength="12" ConcurrencyMode="Fixed" />
+    <Property Name="supCode" Type="Edm.String" MaxLength="6" ConcurrencyMode="Fixed" />
+    <Property Name="supName" Type="Edm.String" MaxLength="40" ConcurrencyMode="Fixed" />
+    <Property Name="supTax" Type="Edm.String" Nullable="false" MaxLength="8" ConcurrencyMode="Fixed" />
+    <Property Name="contactName1" Type="Edm.String" MaxLength="30" ConcurrencyMode="Fixed" />
+    <Property Name="contactMobile1" Type="Edm.String" MaxLength="15" ConcurrencyMode="Fixed" />
+    <Property Name="contactName2" Type="Edm.String" MaxLength="10" ConcurrencyMode="Fixed" />
+    <Property Name="contactMobile2" Type="Edm.String" MaxLength="15" ConcurrencyMode="Fixed" />
+    <Property Name="contactName3" Type="Edm.String" MaxLength="10" ConcurrencyMode="Fixed" />
+    <Property Name="contactMobile3" Type="Edm.String" MaxLength="15" ConcurrencyMode="Fixed" />
+    <Property Name="supTel" Type="Edm.String" MaxLength="20" ConcurrencyMode="Fixed" />
+    <Property Name="supFax" Type="Edm.String" MaxLength="20" ConcurrencyMode="Fixed" />
+    <Property Name="supAdd" Type="Edm.String" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="supMail" Type="Edm.String" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="supMomo" Type="Edm.String" MaxLength="200" ConcurrencyMode="Fixed" />
+    <Property Name="inDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="lastInDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="sClerk" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="supPayID" Type="Edm.Int16" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="productcode" Relationship="LightSwitchApplication.productcode_supID" ToRole="productcode" FromRole="suppliercode" />
+    <NavigationProperty Name="paywaycodeItem" Relationship="LightSwitchApplication.suppliercode_suppliercode_ibfk_1" ToRole="paywaycode" FromRole="suppliercode" />
+  </EntityType>
+  <EntityType Name="paywaycodeItem">
+    <Key>
+      <PropertyRef Name="payID" />
+    </Key>
+    <Property Name="payID" Type="Edm.Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="payDesc" Type="Edm.String" Nullable="false" MaxLength="20" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="suppliercode" Relationship="LightSwitchApplication.suppliercode_suppliercode_ibfk_1" ToRole="suppliercode" FromRole="paywaycode" />
+  </EntityType>
+  <Association Name="sendrecord_sendrecord_ibfk_1">
+    <End Role="sendtype" Type="LightSwitchApplication.sendtypeItem" Multiplicity="1" />
+    <End Role="sendrecord" Type="LightSwitchApplication.sendrecordItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sendtype">
+        <PropertyRef Name="sendTypeID" />
+      </Principal>
+      <Dependent Role="sendrecord">
+        <PropertyRef Name="sendTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="eorderitem_orderItem">
+    <End Role="eorder" Type="LightSwitchApplication.eorderItem" Multiplicity="1" />
+    <End Role="eorderitem" Type="LightSwitchApplication.eorderitemItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="eorder">
+        <PropertyRef Name="odID" />
+      </Principal>
+      <Dependent Role="eorderitem">
+        <PropertyRef Name="odID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="eorderitem_productCode">
+    <End Role="productcode" Type="LightSwitchApplication.productcodeItem" Multiplicity="1" />
+    <End Role="eorderitem" Type="LightSwitchApplication.eorderitemItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productcode">
+        <PropertyRef Name="prodID" />
+      </Principal>
+      <Dependent Role="eorderitem">
+        <PropertyRef Name="prodID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="productcode_ppID">
+    <End Role="productclass" Type="LightSwitchApplication.productclassItem" Multiplicity="0..1" />
+    <End Role="productcode" Type="LightSwitchApplication.productcodeItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productclass">
+        <PropertyRef Name="ppID" />
+      </Principal>
+      <Dependent Role="productcode">
+        <PropertyRef Name="ppID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_eorder_customercode">
+    <End Role="customercode" Type="LightSwitchApplication.customercodeItem" Multiplicity="0..1" />
+    <End Role="eorder" Type="LightSwitchApplication.eorderItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customercode">
+        <PropertyRef Name="cusID" />
+      </Principal>
+      <Dependent Role="eorder">
+        <PropertyRef Name="cusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_invtitlecode_customercode">
+    <End Role="customercode" Type="LightSwitchApplication.customercodeItem" Multiplicity="1" />
+    <End Role="invtitlecode" Type="LightSwitchApplication.invtitlecodeItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customercode">
+        <PropertyRef Name="cusID" />
+      </Principal>
+      <Dependent Role="invtitlecode">
+        <PropertyRef Name="cusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="productcode_supID">
+    <End Role="suppliercode" Type="LightSwitchApplication.suppliercodeItem" Multiplicity="0..1" />
+    <End Role="productcode" Type="LightSwitchApplication.productcodeItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="suppliercode">
+        <PropertyRef Name="supID" />
+      </Principal>
+      <Dependent Role="productcode">
+        <PropertyRef Name="supID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="suppliercode_suppliercode_ibfk_1">
+    <End Role="paywaycode" Type="LightSwitchApplication.paywaycodeItem" Multiplicity="0..1" />
+    <End Role="suppliercode" Type="LightSwitchApplication.suppliercodeItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="paywaycode">
+        <PropertyRef Name="payID" />
+      </Principal>
+      <Dependent Role="suppliercode">
+        <PropertyRef Name="supPayID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="inikierpDataObjectContext" m:IsDefaultEntityContainer="true">
+    <EntitySet Name="cuskindcode" EntityType="LightSwitchApplication.cuskindcodeItem" />
+    <EntitySet Name="customercode" EntityType="LightSwitchApplication.customercodeItem" />
+    <EntitySet Name="sendrecord" EntityType="LightSwitchApplication.sendrecordItem" />
+    <EntitySet Name="eorder" EntityType="LightSwitchApplication.eorderItem" />
+    <EntitySet Name="sendtype" EntityType="LightSwitchApplication.sendtypeItem" />
+    <EntitySet Name="eorderitem" EntityType="LightSwitchApplication.eorderitemItem" />
+    <EntitySet Name="eorderstatuscode" EntityType="LightSwitchApplication.eorderstatuscodeItem" />
+    <EntitySet Name="productclass" EntityType="LightSwitchApplication.productclassItem" />
+    <EntitySet Name="productcode" EntityType="LightSwitchApplication.productcodeItem" />
+    <EntitySet Name="employeecode" EntityType="LightSwitchApplication.employeecodeItem" />
+    <EntitySet Name="invtitlecode" EntityType="LightSwitchApplication.invtitlecodeItem" />
+    <EntitySet Name="unitcode" EntityType="LightSwitchApplication.unitcodeItem" />
+    <EntitySet Name="punitcode" EntityType="LightSwitchApplication.punitcodeItem" />
+    <EntitySet Name="suppliercode" EntityType="LightSwitchApplication.suppliercodeItem" />
+    <EntitySet Name="paywaycode" EntityType="LightSwitchApplication.paywaycodeItem" />
+    <AssociationSet Name="sendrecord_sendrecord_ibfk_1" Association="LightSwitchApplication.sendrecord_sendrecord_ibfk_1">
+      <End Role="sendtype" EntitySet="sendtype" />
+      <End Role="sendrecord" EntitySet="sendrecord" />
+    </AssociationSet>
+    <AssociationSet Name="eorderitem_orderItem" Association="LightSwitchApplication.eorderitem_orderItem">
+      <End Role="eorder" EntitySet="eorder" />
+      <End Role="eorderitem" EntitySet="eorderitem" />
+    </AssociationSet>
+    <AssociationSet Name="eorderitem_productCode" Association="LightSwitchApplication.eorderitem_productCode">
+      <End Role="productcode" EntitySet="productcode" />
+      <End Role="eorderitem" EntitySet="eorderitem" />
+    </AssociationSet>
+    <AssociationSet Name="productcode_ppID" Association="LightSwitchApplication.productcode_ppID">
+      <End Role="productclass" EntitySet="productclass" />
+      <End Role="productcode" EntitySet="productcode" />
+    </AssociationSet>
+    <AssociationSet Name="FK_eorder_customercode" Association="LightSwitchApplication.FK_eorder_customercode">
+      <End Role="customercode" EntitySet="customercode" />
+      <End Role="eorder" EntitySet="eorder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_invtitlecode_customercode" Association="LightSwitchApplication.FK_invtitlecode_customercode">
+      <End Role="customercode" EntitySet="customercode" />
+      <End Role="invtitlecode" EntitySet="invtitlecode" />
+    </AssociationSet>
+    <AssociationSet Name="productcode_supID" Association="LightSwitchApplication.productcode_supID">
+      <End Role="suppliercode" EntitySet="suppliercode" />
+      <End Role="productcode" EntitySet="productcode" />
+    </AssociationSet>
+    <AssociationSet Name="suppliercode_suppliercode_ibfk_1" Association="LightSwitchApplication.suppliercode_suppliercode_ibfk_1">
+      <End Role="paywaycode" EntitySet="paywaycode" />
+      <End Role="suppliercode" EntitySet="suppliercode" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Documents>
+    <Document FullPath="C:\Users\Administrator\Documents\Visual Studio 2012\Projects\SidShop\SidShop\Common\Properties\Common.lsml" Checksum="BD946D95E4E22BF1256BE5202DE471DDE6FE3BAC151B650577BA09D9DBEA722E" />
+    <Document FullPath="C:\Users\Administrator\Documents\Visual Studio 2012\Projects\SidShop\SidShop\Server\Properties\Service.lsml" Checksum="0BC80953DBFF13AB8F9700568F2EBC8D5304C7991DD391591D418BE62DA95672" />
+  </Documents>
+</ModelDocumentManifest>
